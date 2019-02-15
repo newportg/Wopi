@@ -1,0 +1,103 @@
+    {
+      "apiVersion": "2018-03-01-preview",
+      "copy": {
+        "name": "containersCopy",
+        "count": "[length(parameters('para_storageObject').containers)]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]"
+      ],
+      "name": "[concat(variables('var_str_name'), '/default/', parameters('para_storageObject').containers[copyIndex()].containerName)]",
+      "properties": {
+        "publicAccess": "Container"
+      },
+      "tags": {
+        "displayName": "StorageAcct/Containers"
+      },
+      "type": "blobServices/containers"
+    },
+	
+	**********************************************************	
+	{
+      "apiVersion": "2018-03-01-preview",
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]"
+      ],
+      "name": "[concat(variables('var_str_name'), '/default/', 'files')]",
+      "properties": {
+        "publicAccess": "Container"
+      },
+      "tags": {
+        "displayName": "StorageAcct/Containers"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+	
+	**********************************************************
+	
+	
+	{
+      "apiVersion": "2018-03-01-preview",
+	"copy": {
+        "name": "containersCopy",
+        "count": "[length(parameters('para_storageObject').containers)]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]"
+      ],
+	  "name": "[concat(variables('var_str_name'), '/default/', parameters('para_storageObject').containers[copyIndex()].containerName)]",
+      "properties": {
+        "publicAccess": "Container"
+      },
+      "tags": {
+        "displayName": "StorageAcct/Containers"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+	
+	
+	    {
+      "apiVersion": "2016-03-01",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_cert_name')]",
+      "properties": {
+        "hostNames": [],
+        "pfxBlob": "[parameters('para_certPfxBase64')]",
+        "password": "[parameters('para_certPfxPassword')]",
+        "cerBlob": null,
+        "serverFarmId": null
+      },
+      "tags": {
+        "displayName": "Certificate"
+      },
+      "type": "Microsoft.Web/certificates"
+    },
+	
+	    {
+      "apiVersion": "2016-03-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
+        "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]"
+      ],
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_cert_name')]",
+      "properties": {
+        "keyVaultId": "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
+        "keyVaultSecretName": "CertPfxBase64",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]"
+      },
+      "tags": {
+        "displayName": "Certificate"
+      },
+      "type": "Microsoft.Web/certificates"
+    },
+	
+	
+	    "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]",
+        "[concat('Microsoft.Web/serverfarms/', variables('var_hstpln_name'))]",
+        "[concat('Microsoft.DocumentDb/databaseAccounts/',variables('var_docdb_name'))]",
+        "[concat('Microsoft.Web/certificates', variables('var_cert_name'))]"
+		
+"dependsOn": "[concat('Microsoft.Web/sites/', variables('var_webapp_name'))]",
+			  
+	
