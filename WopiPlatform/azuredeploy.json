@@ -1,0 +1,405 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "para_acronym_region": {
+      "type": "string"
+    },
+    "para_acronym_resgrp": {
+      "type": "string"
+    },
+    "para_acronym_appsvc": {
+      "type": "string"
+    },
+    "para_acronym_svcpln": {
+      "type": "string"
+    },
+    "para_acronym_stract": {
+      "type": "string"
+    },
+    "para_acronym_kv": {
+      "type": "string"
+    },
+    "para_acronym_azfunc": {
+      "type": "string"
+    },
+    "para_acronym_appin": {
+      "type": "string"
+    },
+    "para_acronym_webapp": {
+      "type": "string"
+    },
+    "para_acronym_docdb": {
+      "type": "string"
+    },
+
+    "para_application_name": {
+      "type": "string"
+    },
+    "para_vanity_name": {
+      "type": "string"
+    },
+    "para_target_env": {
+      "type": "string"
+    },
+    "para_kvSecretsObject": {
+      "type": "object",
+      "defaultValue": "{}"
+    },
+    "para_storageObject": {
+      "type": "object",
+      "defaultValue": "{}"
+    },
+    "para_databaseAccountTier": { "type": "string" },
+    "para_svcPlanSku": {
+      "type": "string",
+      "allowedValues": [
+        "Free",
+        "Shared",
+        "Basic",
+        "Standard",
+        "Premium"
+      ],
+      "defaultValue": "Free",
+      "metadata": {
+        "description": "The pricing tier of the App Service plan."
+      }
+    },
+    "para_svcPlanSize": {
+      "type": "string",
+      "defaultValue": "F1",
+      "metadata": {
+        "description": "The instance size of the App Service Plan."
+      }
+    },
+    "para_certPfxBase64": {
+      "type": "securestring"
+    },
+    "para_certPfxPassword": {
+      "type": "securestring"
+    }
+  },
+  "variables": {
+    "var_sub_id": "[subscription().subscriptionId]",
+    "var_ten_id": "[subscription().tenantId]",
+
+    "var_env_region": "[concat(parameters('para_target_env'), '-', parameters('para_acronym_region'))]",
+    "var_public_url": "[concat(parameters('para_target_env'), '.', parameters('para_application_name'), '.', parameters('para_vanity_name'))]",
+    "var_str_name": "[concat( tolower(parameters('para_application_name')), parameters('para_acronym_stract'), parameters('para_target_env'), parameters('para_acronym_region'))]",
+    "var_str_resId": "[resourceId(resourceGroup().Name,'Microsoft.Storage/storageAccounts', variables('var_str_name'))]",
+    "var_kv_name": "[concat(parameters('para_application_name'), '-', parameters('para_acronym_kv'), '-', variables('var_env_region'))]",
+    "var_azf_name": "[concat(parameters('para_application_name'), '-', parameters('para_acronym_azfunc'),'-', variables('var_env_region'))]",
+    "var_appin_name": "[concat(parameters('para_application_name'), '-',parameters('para_acronym_appin'),'-', variables('var_env_region'))]",
+    "var_hstpln_group": "[concat(parameters('para_application_name'), '-', parameters('para_acronym_resgrp'), '-', variables('var_env_region'))]",
+    "var_hstpln_env": "[concat(parameters('para_application_name'), '-', parameters('para_acronym_appsvc'), '-', variables('var_env_region'))]",
+    "var_hstpln_name": "[concat(parameters('para_application_name'), '-', parameters('para_acronym_svcpln'), '-', variables('var_env_region'))]",
+    "var_webapp_name": "[concat(parameters('para_application_name'), '-',parameters('para_acronym_webapp'),'-', variables('var_env_region'))]",
+    "var_webapp_hstpln": "[concat('/subscriptions/', variables('var_sub_id'), '/resourceGroups/', variables('var_hstpln_group'), '/providers/Microsoft.Web/serverfarms/', variables('var_hstpln_name'))]",
+    "var_docdb_name": "[concat(parameters('para_application_name'), '-',parameters('para_acronym_docdb'),'-', variables('var_env_region'))]",
+    "var_cert_name": "[concat( tolower(parameters('para_application_name')), uniqueString(resourceGroup().id))]",
+
+    "var_svc_prin": "[concat(resourceId('Microsoft.Web/sites', variables('var_webapp_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]"
+
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-07-01",
+      "dependsOn": [],
+      "kind": "StorageV2",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_str_name')]",
+      "properties": {
+        "accessTier": "Hot",
+        "encryption": {
+          "services": {
+            "file": {
+              "enabled": true
+            },
+            "blob": {
+              "enabled": true
+            }
+          },
+          "keySource": "Microsoft.Storage"
+        },
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "virtualNetworkRules": [],
+          "ipRules": [],
+          "defaultAction": "Allow"
+        },
+        "supportsHttpsTrafficOnly": false
+      },
+      "resources": [],
+      "scale": null,
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "tags": {
+        "displayName": "StorageAcct"
+      },
+      "type": "Microsoft.Storage/storageAccounts"
+    },
+    {
+      "apiVersion": "2018-03-01-preview",
+      "copy": {
+        "name": "containersCopy",
+        "count": "[length(parameters('para_storageObject').containers)]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]"
+      ],
+      "name": "[concat(variables('var_str_name'), '/default/', parameters('para_storageObject').containers[copyIndex()].containerName)]",
+      "properties": {
+        "publicAccess": "Container"
+      },
+      "tags": {
+        "displayName": "StorageAcct/Containers"
+      },
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers"
+    },
+    {
+      "apiVersion": "2015-05-01",
+      "dependsOn": [],
+      "kind": "app",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_appin_name')]",
+      "properties": {
+        "Application_Type": "web",
+        "ApplicationId": "[variables('var_appin_name')]"
+      },
+      "tags": {
+        "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', variables('var_webapp_name'))]": "Resource",
+        "displayName": "AppInsightsComponent"
+      },
+      "type": "Microsoft.Insights/components"
+    },
+    {
+      "apiVersion": "2016-09-01",
+      "dependsOn": [],
+      "kind": "app",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_hstpln_name')]",
+      "properties": {
+        "adminSiteName": "",
+        "name": "[variables('var_hstpln_name')]",
+        "perSiteScaling": false,
+        "reserved": false,
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0,
+        "workerTierName": ""
+      },
+      "scale": null,
+      "sku": {
+        "name": "[parameters('para_svcPlanSize')]",
+        "tier": "[parameters('para_svcPlanSku')]",
+        "capacity": 1
+      },
+      "tags": {
+        "displayName": "Service Plan/ Farm"
+      },
+      "type": "Microsoft.Web/serverfarms"
+    },
+    {
+      "apiVersion": "2016-03-01",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_cert_name')]",
+      "properties": {
+        "hostNames": [],
+        "pfxBlob": "[parameters('para_certPfxBase64')]",
+        "password": "[parameters('para_certPfxPassword')]",
+        "cerBlob": null,
+        "serverFarmId": null
+      },
+      "tags": {
+        "displayName": "Certificate"
+      },
+      "type": "Microsoft.Web/certificates"
+    },
+    {
+      "apiVersion": "2015-04-08",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_docdb_name')]",
+      "properties": {
+        "name": "[variables('var_docdb_name')]",
+        "databaseAccountOfferType": "[parameters('para_databaseAccountTier')]",
+        "locations": [
+          {
+            "locationName": "[resourceGroup().location]",
+            "failoverPriority": 0
+          }
+        ]
+      },
+      "tags": {
+        "displayName": "CosmosDB"
+      },
+      "type": "Microsoft.DocumentDB/databaseAccounts"
+    },
+
+
+    {
+      "apiVersion": "2016-08-01",
+      "dependsOn": [
+        "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]",
+        "[concat('Microsoft.Web/serverfarms/', variables('var_hstpln_name'))]",
+        "[concat('Microsoft.DocumentDb/databaseAccounts/',variables('var_docdb_name'))]",
+        "[concat('Microsoft.Web/certificates/', variables('var_cert_name'))]"
+      ],
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "kind": "app",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_webapp_name')]",
+      "properties": {
+        "hostingEnvironment": "[variables('var_hstpln_env')]",
+        "hostNameSslStates": [
+          {
+            "name": "[variables('var_public_url')]",
+            "sslState": "SniEnabled",
+            "thumbprint": "[reference(resourceId('Microsoft.Web/certificates', variables('var_cert_name')), providers('Microsoft.Web', 'certificates').apiVersions[0]).thumbprint]",
+            "hostType": "Standard"
+          }
+        ],
+        "name": "[variables('var_webapp_name')]",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
+        "siteConfig": {
+          "appSettings": [
+            {
+              "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+              "value": "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]"
+            },
+            {
+              "Name": "ddb:endpoint",
+              "Value": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]"
+            },
+            {
+              "Name": "ddb:authKey",
+              "Value": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]"
+            },
+            {
+              "Name": "abs:Protocol",
+              "Value": "https"
+            },
+            {
+              "Name": "abs:AccountName",
+              "Value": "[variables('var_str_name')]"
+            },
+            {
+              "Name": "abs:AccountKey",
+              "Value": "[listKeys( resourceId('Microsoft.Storage/storageAccounts', variables('var_str_name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
+            }
+          ],
+          "alwaysOn": false
+        }
+      },
+      "tags": {
+        "displayName": "WebApp"
+      },
+      "type": "Microsoft.Web/sites"
+    },
+    {
+      "apiVersion": "2016-10-01",
+
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_kv_name')]",
+      "properties": {
+        "sku": {
+          "family": "A",
+          "name": "standard"
+        },
+        "tenantId": "[variables('var_ten_id')]",
+        "accessPolicies": [
+          {
+            "tenantId": "[variables('var_ten_id')]",
+            "objectId": "[reference(variables('var_svc_prin'), '2015-08-31-PREVIEW').principalId]",
+            "permissions": {
+              "keys": [
+                "get",
+                "list",
+                "update",
+                "create",
+                "import",
+                "delete",
+                "recover",
+                "backup",
+                "restore"
+              ],
+              "secrets": [
+                "get",
+                "list",
+                "set",
+                "delete",
+                "recover",
+                "backup",
+                "restore"
+              ],
+              "certificates": [
+                "get",
+                "list",
+                "update",
+                "create",
+                "import",
+                "delete",
+                "recover",
+                "managecontacts",
+                "manageissuers",
+                "getissuers",
+                "listissuers",
+                "setissuers",
+                "deleteissuers"
+              ]
+            }
+          }
+        ],
+        "enabledForDeployment": false,
+        "enabledForDiskEncryption": false,
+        "enabledForTemplateDeployment": false
+      },
+      "scale": null,
+      "tags": {
+        "displayName": "Key Vault"
+      },
+      "type": "Microsoft.KeyVault/vaults"
+    },
+    {
+      "apiVersion": "2015-06-01",
+      "copy": {
+        "name": "secretsCopy",
+        "count": "[length(parameters('para_kvSecretsObject').secrets)]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.KeyVault/vaults/', variables('var_kv_name'))]"
+      ],
+      "location": "[resourceGroup().location]",
+      "name": "[concat(variables('var_kv_name'), '/', parameters('para_kvSecretsObject').secrets[copyIndex()].secretName)]",
+      "properties": {
+        "value": "[parameters('para_kvSecretsObject').secrets[copyIndex()].secretValue]"
+      },
+      "tags": {
+        "displayName": "Key Vault Secrets"
+      },
+      "type": "Microsoft.KeyVault/vaults/secrets"
+    },
+
+    {
+      "apiVersion": "2016-08-01",
+      "dependsOn": [
+        "[concat('Microsoft.Web/sites/', variables('var_webapp_name'))]"
+      ],
+      "kind": "string",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_webapp_name')]",
+      "properties": {
+        "siteName": "[variables('var_webapp_name')]"
+      },
+      "tags": {
+        "displayName": "DNS Binding"
+      },
+      "type": "Microsoft.Web/sites/hostNameBindings"
+    }
+
+
+  ],
+  "outputs": {}
+}
