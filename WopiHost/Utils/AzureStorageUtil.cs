@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using Microsoft.ApplicationInsights;
 
 namespace com.microsoft.dx.officewopi.Utils
 {
@@ -25,6 +26,9 @@ namespace com.microsoft.dx.officewopi.Utils
             string azureBlobAccountName = ConfigurationManager.AppSettings["abs:AccountName"];
             string azureBlobAccountkey = ConfigurationManager.AppSettings["abs:AccountKey"];
             container = container.Replace(".", "");
+
+            System.Diagnostics.Trace.TraceWarning("GetFiles");
+
 
             // Initialize the Azure account information
             string connString = string.Format("DefaultEndpointsProtocol={0};AccountName={1};AccountKey={2}",
@@ -53,6 +57,8 @@ namespace com.microsoft.dx.officewopi.Utils
 
         public static async Task<string> UploadFile(string fileName, string container, byte[] fileBytes)
         {
+            System.Diagnostics.Trace.TraceWarning("UploadFile");
+
             //get configuration data
             string url = null;
             string azureBlobProtocol = ConfigurationManager.AppSettings["abs:Protocol"];
@@ -97,6 +103,8 @@ namespace com.microsoft.dx.officewopi.Utils
         }
         public static async Task<bool> DeleteFile(string fileName, string container)
         {
+            System.Diagnostics.Trace.TraceWarning("DeleteFile");
+
             //get configuration data
             string azureBlobProtocol = ConfigurationManager.AppSettings["abs:Protocol"];
             string azureBlobAccountName = ConfigurationManager.AppSettings["abs:AccountName"];
@@ -130,6 +138,8 @@ namespace com.microsoft.dx.officewopi.Utils
 
         public static async Task<byte[]> GetFile(string fileName, string container)
         {
+            System.Diagnostics.Trace.TraceWarning("GetFile");
+
             //get configuration data
             string azureBlobProtocol = ConfigurationManager.AppSettings["abs:Protocol"];
             string azureBlobAccountName = ConfigurationManager.AppSettings["abs:AccountName"];

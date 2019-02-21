@@ -71,12 +71,6 @@
       "metadata": {
         "description": "The instance size of the App Service Plan."
       }
-    },
-    "para_certPfxBase64": {
-      "type": "securestring"
-    },
-    "para_certPfxPassword": {
-      "type": "securestring"
     }
   },
   "variables": {
@@ -160,7 +154,7 @@
     },
     {
       "apiVersion": "2015-05-01",
-      "dependsOn": [],
+      "dependsOn": [ "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]" ],
       "kind": "app",
       "location": "[resourceGroup().location]",
       "name": "[variables('var_appin_name')]",
@@ -175,33 +169,8 @@
       "type": "Microsoft.Insights/components"
     },
     {
-      "apiVersion": "2016-09-01",
-      "dependsOn": [],
-      "kind": "app",
-      "location": "[resourceGroup().location]",
-      "name": "[variables('var_hstpln_name')]",
-      "properties": {
-        "adminSiteName": "",
-        "name": "[variables('var_hstpln_name')]",
-        "perSiteScaling": false,
-        "reserved": false,
-        "targetWorkerCount": 0,
-        "targetWorkerSizeId": 0,
-        "workerTierName": ""
-      },
-      "scale": null,
-      "sku": {
-        "name": "[parameters('para_svcPlanSize')]",
-        "tier": "[parameters('para_svcPlanSku')]",
-        "capacity": 1
-      },
-      "tags": {
-        "displayName": "Service Plan/ Farm"
-      },
-      "type": "Microsoft.Web/serverfarms"
-    },
-    {
       "apiVersion": "2015-04-08",
+      "dependsOn": [ ],
       "location": "[resourceGroup().location]",
       "name": "[variables('var_docdb_name')]",
       "properties": {
@@ -221,62 +190,7 @@
     },
 
     {
-      "apiVersion": "2016-08-01",
-      "dependsOn": [
-        "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]",
-        "[concat('Microsoft.Web/serverfarms/', variables('var_hstpln_name'))]",
-        "[concat('Microsoft.DocumentDb/databaseAccounts/',variables('var_docdb_name'))]"
-      ],
-      "identity": {
-        "type": "SystemAssigned"
-      },
-      "kind": "app",
-      "location": "[resourceGroup().location]",
-      "name": "[variables('var_webapp_name')]",
-      "properties": {
-        "hostingEnvironment": "[variables('var_hstpln_env')]",
-        "hostNameSslStates": [],
-        "name": "[variables('var_webapp_name')]",
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
-        "siteConfig": {
-          "appSettings": [
-            {
-              "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-              "value": "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]"
-            },
-            {
-              "Name": "ddb:endpoint",
-              "Value": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]"
-            },
-            {
-              "Name": "ddb:authKey",
-              "Value": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]"
-            },
-            {
-              "Name": "abs:Protocol",
-              "Value": "https"
-            },
-            {
-              "Name": "abs:AccountName",
-              "Value": "[variables('var_str_name')]"
-            },
-            {
-              "Name": "abs:AccountKey",
-              "Value": "[listKeys( resourceId('Microsoft.Storage/storageAccounts', variables('var_str_name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
-            }
-          ],
-          "alwaysOn": false
-        }
-      },
-      "tags": {
-        "displayName": "WebApp"
-      },
-      "type": "Microsoft.Web/sites"
-    },
-
-    {
       "apiVersion": "2016-10-01",
-
       "location": "[resourceGroup().location]",
       "name": "[variables('var_kv_name')]",
       "properties": {
@@ -285,41 +199,39 @@
             "objectId": "[reference(variables('var_svc_prin'), '2015-08-31-PREVIEW').principalId]",
             "permissions": {
               "certificates": [
-                "Get",
-                "List",
-                "Update",
-                "Create",
-                "Import",
-                "Delete",
-                "Recover",
-                "Backup",
-                "Restore",
-                "ManageContacts",
-                "ManageIssuers",
-                "GetIssuers",
-                "ListIssuers",
-                "SetIssuers",
-                "DeleteIssuers"
+                "get",
+                "list",
+                "update",
+                "create",
+                "import",
+                "delete",
+                "recover",
+                "managecontacts",
+                "manageissuers",
+                "getissuers",
+                "listissuers",
+                "setissuers",
+                "deleteissuers"
               ],
               "keys": [
-                "Get",
-                "List",
-                "Update",
-                "Create",
-                "Import",
-                "Delete",
-                "Recover",
-                "Backup",
-                "Restore"
+                "get",
+                "list",
+                "update",
+                "create",
+                "import",
+                "delete",
+                "recover",
+                "backup",
+                "restore"
               ],
               "secrets": [
-                "Get",
-                "List",
-                "Set",
-                "Delete",
-                "Recover",
-                "Backup",
-                "Restore"
+                "get",
+                "list",
+                "set",
+                "delete",
+                "recover",
+                "backup",
+                "restore"
               ]
             },
             "tenantId": "[variables('var_ten_id')]"
@@ -359,54 +271,97 @@
       },
       "type": "Microsoft.KeyVault/vaults/secrets"
     },
-    {
-      "apiVersion": "2016-03-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
-        "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]"
-      ],
-      "location": "[resourceGroup().location]",
-      "name": "[variables('var_cert_name')]",
-      "properties": {
-        "keyVaultId": "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
-        "keyVaultSecretName": "CertPfxBase64",
-        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]"
-      },
-      "tags": {
-        "displayName": "Certificate"
-      },
-      "type": "Microsoft.Web/certificates"
-    },
 
     {
-      "apiVersion": "2015-08-01",
-      "dependsOn": [
-        "[concat('Microsoft.Web/sites/', variables('var_webapp_name'))]",
-        "[concat('Microsoft.Web/certificates/', variables('var_cert_name'))]"
-      ],
+      "apiVersion": "2016-09-01",
+      "dependsOn": [],
+      "kind": "app",
       "location": "[resourceGroup().location]",
-      "name": "[concat(variables('var_webapp_name'),'-hostNameSslStates')]",
+      "name": "[variables('var_hstpln_name')]",
       "properties": {
-        "hostNameSslStates": [
-          {
-            "name": "[variables('var_public_url')]",
-            "sslState": "SniEnabled",
-            "thumbprint": "[reference(resourceId('Microsoft.Web/certificates', variables('var_cert_name')), providers('Microsoft.Web', 'certificates').apiVersions[0]).thumbprint]",
-            "hostType": "Standard",
-            "toUpdate": "true"
-          }
-        ]
+        "adminSiteName": "",
+        "name": "[variables('var_hstpln_name')]",
+        "perSiteScaling": false,
+        "reserved": false,
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0,
+        "workerTierName": ""
+      },
+      "scale": null,
+      "sku": {
+        "name": "[parameters('para_svcPlanSize')]",
+        "tier": "[parameters('para_svcPlanSku')]",
+        "capacity": 1
       },
       "tags": {
-        "displayName": "WebApp HostNameSSL"
+        "displayName": "Service Plan/ Farm"
+      },
+      "type": "Microsoft.Web/serverfarms"
+    },
+    {
+      "apiVersion": "2016-08-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms/', variables('var_hstpln_name'))]",
+        "[resourceId('Microsoft.DocumentDb/databaseAccounts/',variables('var_docdb_name'))]"
+      ],
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "kind": "app",
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_webapp_name')]",
+      "properties": {
+        "hostingEnvironment": "[variables('var_hstpln_env')]",
+        "hostNameSslStates": [],
+        "name": "[variables('var_webapp_name')]",
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
+        "siteConfig": {
+          "appSettings": [
+            {
+              "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+              "value": "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]"
+            },
+            {
+              "Name": "ddb:endpoint",
+              "Value": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]"
+            },
+            {
+              "Name": "ddb:authKey",
+              "Value": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]"
+            },
+            {
+              "Name": "ddb:database",
+              "Value": "WopiDb"
+            },
+            {
+              "Name": "abs:Protocol",
+              "Value": "https"
+            },
+            {
+              "Name": "abs:AccountName",
+              "Value": "[variables('var_str_name')]"
+            },
+            {
+              "Name": "abs:AccountKey",
+              "Value": "[listKeys( resourceId('Microsoft.Storage/storageAccounts', variables('var_str_name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
+            },
+            {
+              "Name": "WopiDiscovery",
+              "value": "https://wopi.hub.knightfrank.com/hosting/discovery"
+            }
+          ],
+          "alwaysOn": false
+        }
+      },
+      "tags": {
+        "displayName": "WebApp"
       },
       "type": "Microsoft.Web/sites"
     }
 
     //{
     //  "apiVersion": "2016-08-01",
-    //  "dependsOn": [
-    //  ],
+    //  "dependsOn": [ "[resourceId('Microsoft.Web/sites/', variables('var_webapp_name'))]" ],
     //  "kind": "string",
     //  "location": "[resourceGroup().location]",
     //  "name": "[variables('var_webapp_name')]",
@@ -417,7 +372,49 @@
     //    "displayName": "DNS Binding"
     //  },
     //  "type": "Microsoft.Web/sites/hostNameBindings"
+    //},
+    //{
+    //  "apiVersion": "2016-03-01",
+    //  "dependsOn": [
+    //    "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
+    //    "secretsCopy"
+    //  ],
+    //  "location": "[resourceGroup().location]",
+    //  "name": "[variables('var_cert_name')]",
+    //  "properties": {
+    //    "keyVaultId": "[resourceId(variables('var_sub_id'), resourceGroup().name, 'Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
+    //    "keyVaultSecretName": "CertPfxBase64",
+    //    "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]"
+    //  },
+    //  "tags": {
+    //    "displayName": "Certificate"
+    //  },
+    //  "type": "Microsoft.Web/certificates"
+    //},
+    //{
+    //  "apiVersion": "2015-08-01",
+    //  "dependsOn": [
+    //    "[resourceId('Microsoft.Web/certificates/', variables('var_cert_name'))]"
+    //  ],
+    //  "location": "[resourceGroup().location]",
+    //  "name": "[concat(variables('var_webapp_name'),'-hostNameSslStates')]",
+    //  "properties": {
+    //    "hostNameSslStates": [
+    //      {
+    //        "name": "[variables('var_public_url')]",
+    //        "sslState": "SniEnabled",
+    //        "thumbprint": "[reference(resourceId('Microsoft.Web/certificates', variables('var_cert_name')), providers('Microsoft.Web', 'certificates').apiVersions[0]).thumbprint]",
+    //        "hostType": "Standard",
+    //        "toUpdate": "true"
+    //      }
+    //    ]
+    //  },
+    //  "tags": {
+    //    "displayName": "WebApp HostNameSSL"
+    //  },
+    //  "type": "Microsoft.Web/sites"
     //}
+
   ],
   "outputs": {}
 }

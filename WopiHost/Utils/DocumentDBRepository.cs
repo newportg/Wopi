@@ -23,6 +23,7 @@ namespace com.microsoft.dx.officewopi.Utils
                     databaseId = ConfigurationManager.AppSettings["ddb:database"];
                 }
 
+                System.Diagnostics.Trace.TraceError("DatabaseId :"+ databaseId);
                 return databaseId;
             }
         }
