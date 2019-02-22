@@ -92,8 +92,8 @@
     "var_docdb_name": "[concat(parameters('para_application_name'), '-',parameters('para_acronym_docdb'),'-', variables('var_env_region'))]",
     "var_cert_name": "[concat( tolower(parameters('para_application_name')), uniqueString(resourceGroup().id))]",
 
-    "var_svc_prin": "[concat(resourceId('Microsoft.Web/sites', variables('var_webapp_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]"
-
+    "var_svc_prin": "[concat(resourceId('Microsoft.Web/sites', variables('var_webapp_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]",
+    "var_aad_appid": "6cb5883a-a00b-4544-a4ba-9bef16799be4"
   },
   "resources": [
     {
@@ -170,7 +170,7 @@
     },
     {
       "apiVersion": "2015-04-08",
-      "dependsOn": [ ],
+      "dependsOn": [],
       "location": "[resourceGroup().location]",
       "name": "[variables('var_docdb_name')]",
       "properties": {
@@ -311,6 +311,7 @@
       "location": "[resourceGroup().location]",
       "name": "[variables('var_webapp_name')]",
       "properties": {
+        "domainId": null,
         "hostingEnvironment": "[variables('var_hstpln_env')]",
         "hostNameSslStates": [],
         "name": "[variables('var_webapp_name')]",
@@ -348,10 +349,31 @@
             {
               "Name": "WopiDiscovery",
               "value": "https://wopi.hub.knightfrank.com/hosting/discovery"
+            },
+            {
+              "Name": "ida:AADInstance",
+              "value": "https://login.microsoftonline.com/"
+            },
+            {
+              "Name": "ida:PostLogoutRedirectUri",
+              "Value": "[concat(variables('var_webapp_name'), '.azurewebsites.net')]"
             }
           ],
+
+          "siteAuthSettings": {
+            "clientId": "[variables('var_aad_appid')]",
+            "enabled": true,
+            "unauthenticatedClientAction": "RedirectToLoginPage",
+            "tokenStoreEnabled": true,
+            "defaultProvider": "AzureActiveDirectory",
+            "issuer": "[concat('https://sts.windows.net/', variables('var_ten_id'))]",
+            "allowedAudiences": [
+              "[concat('https://', variables('var_webapp_name'), '.azurewebsites.net')]"
+            ]
+          },
           "alwaysOn": false
-        }
+        },
+        "siteName": "[variables('var_webapp_name')]"
       },
       "tags": {
         "displayName": "WebApp"
@@ -359,20 +381,24 @@
       "type": "Microsoft.Web/sites"
     }
 
+
     //{
     //  "apiVersion": "2016-08-01",
-    //  "dependsOn": [ "[resourceId('Microsoft.Web/sites/', variables('var_webapp_name'))]" ],
+    //  "dependsOn": [ "[resourceId('Microsoft.Web/sites', variables('var_webapp_name'))]" ],
     //  "kind": "string",
     //  "location": "[resourceGroup().location]",
     //  "name": "[variables('var_webapp_name')]",
     //  "properties": {
-    //    "siteName": "[variables('var_webapp_name')]"
+    //    "siteName": "[variables('var_webapp_name')]",
+    //    "domainId": null,
+    //    "hostNameType": "Verified"
     //  },
     //  "tags": {
     //    "displayName": "DNS Binding"
     //  },
     //  "type": "Microsoft.Web/sites/hostNameBindings"
-    //},
+    //}
+
     //{
     //  "apiVersion": "2016-03-01",
     //  "dependsOn": [
@@ -414,7 +440,6 @@
     //  },
     //  "type": "Microsoft.Web/sites"
     //}
-
-  ],
-  "outputs": {}
-}
+    ],
+      "outputs": {}
+    }
