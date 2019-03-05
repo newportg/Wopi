@@ -33,6 +33,9 @@
       "type": "string"
     },
 
+    "para_application_id": {
+      "type": "string"
+    },
     "para_application_name": {
       "type": "string"
     },
@@ -71,7 +74,16 @@
       "metadata": {
         "description": "The instance size of the App Service Plan."
       }
+    },
+    "para_svcPlanFamily": {
+      "type": "string",
+      "defaultValue": "F"
+    },
+    "para_svcPlanCapacity": {
+      "type": "string",
+      "defaultValue": "1"
     }
+
   },
   "variables": {
     "var_sub_id": "[subscription().subscriptionId]",
@@ -92,8 +104,7 @@
     "var_docdb_name": "[concat(parameters('para_application_name'), '-',parameters('para_acronym_docdb'),'-', variables('var_env_region'))]",
     "var_cert_name": "[concat( tolower(parameters('para_application_name')), uniqueString(resourceGroup().id))]",
 
-    "var_svc_prin": "[concat(resourceId('Microsoft.Web/sites', variables('var_webapp_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]",
-    "var_aad_appid": "6cb5883a-a00b-4544-a4ba-9bef16799be4"
+    "var_svc_prin": "[concat(resourceId('Microsoft.Web/sites', variables('var_webapp_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]"
   },
   "resources": [
     {
@@ -291,7 +302,9 @@
       "sku": {
         "name": "[parameters('para_svcPlanSize')]",
         "tier": "[parameters('para_svcPlanSku')]",
-        "capacity": 1
+        "size": "[parameters('para_svcPlanSize')]",
+        "family": "[parameters('para_svcPlanFamily')]",
+        "capacity": "[parameters('para_svcPlanCapacity')]"
       },
       "tags": {
         "displayName": "Service Plan/ Farm"
@@ -314,6 +327,7 @@
         "domainId": null,
         "hostingEnvironment": "[variables('var_hstpln_env')]",
         "hostNameSslStates": [],
+        "httpsOnly": true,
         "name": "[variables('var_webapp_name')]",
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
         "siteConfig": {
@@ -361,7 +375,7 @@
           ],
 
           "siteAuthSettings": {
-            "clientId": "[variables('var_aad_appid')]",
+            "clientId": "[parameters('para_application_id')]",
             "enabled": true,
             "unauthenticatedClientAction": "RedirectToLoginPage",
             "tokenStoreEnabled": true,

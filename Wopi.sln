@@ -7,6 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WopiHost", "WopiHost\WopiHo
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "WopiPlatform", "WopiPlatform\WopiPlatform.deployproj", "{30D3F9A3-6FDC-40E2-8DBA-AAEF162597E9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE1C2DEF-4E6E-4B30-AEB7-ADF57F4467B4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "puml", "puml", "{3D771026-51F2-403D-A719-64E46441A90B}"
+	ProjectSection(SolutionItems) = preProject
+		1.puml = 1.puml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +34,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D771026-51F2-403D-A719-64E46441A90B} = {DE1C2DEF-4E6E-4B30-AEB7-ADF57F4467B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45DDD234-D024-4406-A727-ED1B9427606C}

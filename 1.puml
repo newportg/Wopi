@@ -1,0 +1,45 @@
+@startuml WOPI
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Networking/AzureVPNGateway.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+
+LAYOUT_LEFT_RIGHT
+
+frame "Azure Northern Europe" as azRGNe {
+
+    frame "RG Hub" as azRgHuNe {
+        Person( user, "Browser", "IFrame")
+        AzureWebApp( hub, "HUB", "Web Application")
+    }
+
+    frame "RG Wopi Host" as azRgWhNe {
+        AzureBlobStorage( azBsNe, "File Storage", "Office documents")
+        AzureVPNGateway( azVpnNe, "VPN Gateway", "")
+        AzureWebApp( azWaNe, "WOPI Host", "Provides Office Online access to the blob store")
+    }
+}
+
+frame "Knight Frank" as azKf {
+    Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
+}
+
+
+hub <-up-> user : Interacts
+user --> oos : Request File 
+oos -down-> azWaNe : Read / Write
+hub -down-> azBsNe : Writes
+
+azWaNe -up-> azVpnNe : Discovery
+azVpnNe -up-> oos : Discovery
+azWaNe -down-> azBsNe : Get / Put
+
+@enduml

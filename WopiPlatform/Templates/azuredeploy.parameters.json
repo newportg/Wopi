@@ -13,6 +13,7 @@
     "para_acronym_webapp": { "value": "webapp" },
     "para_acronym_docdb": { "value": "docdb" },
 
+    "para_application_id": { "value": "6cb5883a-a00b-4544-a4ba-9bef16799be4" },
     "para_application_name": { "value": "wopihost" },
     "para_vanity_name": { "value": "hub.knightfrank.com" },
     "para_target_env": { "value": "dev" },
@@ -54,7 +55,9 @@
       }
     },
     "para_databaseAccountTier": { "value": "Standard" },
-    "para_svcPlanSku": { "value": "Basic" },
-    "para_svcPlanSize": { "value": "D1" }
+    "para_svcPlanSku": { "value": "Standard" },
+    "para_svcPlanSize": { "value": "S1" },
+    "para_svcPlanFamily": { "value": "S" },
+    "para_svcPlanCapacity": { "value": "1" }
   }
 }

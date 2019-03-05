@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 
+using Flurl;
+using Flurl.Http;
+
+
 namespace com.microsoft.dx.officewopi.Utils
 {
     public static class WopiUtil
@@ -54,6 +58,10 @@ namespace com.microsoft.dx.officewopi.Utils
         public async static Task<List<WopiAction>> GetDiscoveryInfo()
         {
             List<WopiAction> actions = new List<WopiAction>();
+
+            var result = await new Url("https://wopi.hub.knightfrank.com/hosting/discovery")
+    .AllowAnyHttpStatus()
+    .GetStringAsync();
 
             // Determine if the discovery data is cached
             MemoryCache memoryCache = MemoryCache.Default;
