@@ -1,0 +1,74 @@
+@startuml WOPI
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Networking/AzureVPNGateway.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+
+
+frame "Azure Northern Europe" as azRgNe {
+
+    frame "RG Wopi Host" as azRgWhNe {
+        AzureWebApp( azWaNe, "WOPI Host", "Provides Office Online access to the blob store")
+        AzureBlobStorage( azBsNe, "File Storage", "RA-GRS")
+    }
+    
+    frame "RG Hub" as azRgHuNe {
+        AzureVPNGateway( azVpnNe, "VPN Gateway", "")
+        AzureWebApp( hubNe, "HUB", "Web Application")
+    }
+}
+
+frame "Azure Western Europe" as azRgWe {
+
+    frame "RG Wopi Host" as azRgWhWe {
+        AzureBlobStorage( azBsWe, "File Storage Copy", "RA-GRS")
+        AzureWebApp( azWaWe, "WOPI Host", "Provides Office Online access to the blob store")
+    }
+    
+    frame "RG Hub" as azRgHuWe {
+
+        AzureWebApp( hubWe, "HUB", "Web Application")
+        AzureVPNGateway( azVpnWe, "VPN Gateway", "")
+    }
+}
+
+AzureTrafficManager( azTm, "Traffic Manager", "Traffic Manager")
+Person( user, "Browser", "IFrame")
+frame "Knight Frank" as azKf {
+    Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
+}
+
+azTm --> azWaNe
+azTm --> azWaWe
+user --> azTm : Read / Write
+oos <-- user : Request File 
+
+hubWe <-up-> user : Interacts
+hubNe <-up-> user : Interacts
+
+azVpnWe -up-> oos : Discovery
+azVpnNe -up-> oos : Discovery
+
+azWaWe -up-> azVpnWe : Discovery
+azWaNe -up-> azVpnNe : Discovery
+
+azWaNe --> azBsNe : Get / Put
+azWaWe --> azBsNe : Get / Put
+
+azBsNe .right.> azBsWe : Copy
+
+azWaNe ..> azBsWe : Failover
+azWaWe ..> azBsWe : Failover
+
+hubNe -down-> azBsNe : Writes
+hubWe -down-> azBsNe : Writes
+
+@enduml
