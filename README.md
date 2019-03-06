@@ -20,7 +20,7 @@ Step 1,
 * The key here is changing the storage account type to RA-GRS, changing the HUB Web Application to take advantage of this feature is not a necessary change at this point.
  
 
-![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiHubStorageRAGRS.puml)
+![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiHubStorageRAGRS.puml)
 
 Step 2,
     If we just focus on Northern Europe, we can see how the WOPI server connects to the hub. 
@@ -46,14 +46,14 @@ Step 2,
   * Keeper of secrets and connection strings.
   * This resource contains the unique values for this environment, enables the resource to redeployable
 
-![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiSimple.puml)
+![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiSimple.puml)
 
 ## Final redundant, balanced deployment
 
 This setup enables requests to be routed to either datacentre and provides a level of redundancy and recovery.
 The WOPI resource group would be separately deployable to the rest of the HUB application, although it will use the HUB storage account for its file store.
 
-![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiBalanced2.puml)
+![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiBalanced2.puml)
 
 
 ## Current State of the POC
@@ -66,6 +66,6 @@ The solution has been designed so it can be torn down and redeployed at any time
 ### Current issue
 Currently the WopiHost is unable to see the Office Online Server, even though the VNet gateway is configure to let traffic flow. The application is currently configured inside the DEV subscription and uses the VNet Gateway in the Antares-Alpha-NEU-RG resource group.
 
-![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiCurrentState.puml)
+![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiCurrentState.puml)
 
 
