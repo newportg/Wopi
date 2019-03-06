@@ -23,7 +23,15 @@ Step 1,
 
 
 Step 2,
-    If we just focus on Nortern Europe, we can see how the WOPI server connects to the hub. The Hub Web Aplication would include a link to the document in the file store. When the use wishes to open the file then the filename and path should be passed to the Office Online Server (OOS) via a IFrame. 
+    If we just focus on Nortern Europe, we can see how the WOPI server connects to the hub. 
+    
+* The Hub application creates documents and stores them in the storage
+* The Hub Web Aplication would include a link to the document in the file store. 
+* When the use wishes to open the file then the filename and path should be passed to the Office Online Server (OOS) via a IFrame. 
+* The OOS calls the WOPI Host requesting the file.
+* The Wopi Host validates that it can process the document by viewing the OOS Discovery document.
+* The Wopi Host retrieves the document from the storage and returns it to the OSS server to display.
+
 
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiSimple.puml)
 
