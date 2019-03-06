@@ -23,7 +23,7 @@ Step 1,
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiHubStorageRAGRS.puml)
 
 Step 2,
-    If we just focus on Nortern Europe, we can see how the WOPI server connects to the hub. 
+    If we just focus on Northern Europe, we can see how the WOPI server connects to the hub. 
     
 * The Hub Web Application creates documents and stores them in the storage
 * The Hub Web Application would include a link to the document in the file store. 
