@@ -22,7 +22,8 @@ Step 1,
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiHubStorageRAGRS.puml)
 
 
-
+Step 2,
+    If we just focus on Nortern Europe, we can see how the WOPI server connects to the hub. The Hub Web Aplication would include a link to the document in the file store. When the use wishes to open the file then the filename and path should be passed to the Office Online Server (OOS) via a IFrame. 
 
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiSimple.puml)
 
