@@ -17,13 +17,12 @@
 frame "Azure Northern Europe" as azRgNe {
 
     frame "RG GN-WopiHost " as azRgWhNe {
-        AzureWebApp( azWaNe, "WOPI Host", "Provides Office Online access to the blob store")
-        AzureCosmosDb( azDb, "DataStore", "")
-        AzureActiveDirectory( azAd, "Authentication", "")
-        AzureApplicationInsights( azAi, "Logs/Analysis", "")
-        AzureBlobStorage( azBsNe, "File Storage RA-GRS", "kfhubenvneust01")
-        AzureWebApp( hubNe, "HUB", "Web Application")
-        AzureKeyVault( azKv, "KeyVault", "Secrets")
+        AzureWebApp( azWaNe, "WOPI Host", "wopihost-webapp-dev-ne")
+        AzureCosmosDb( azDb, "DataStore", "wopihost-docdb-dev-ne")
+        AzureActiveDirectory( azAd, "Authentication", "azureteamknightfrank.onmicrosoft.com")
+        AzureApplicationInsights( azAi, "Logs/Analysis", "wopihost-appins-dev-ne")
+        AzureBlobStorage( azBsNe, "File Storage", "wopihoststrdevne")
+        AzureKeyVault( azKv, "KeyVault", "wopihost-kv-dev-ne")
     }
     
     frame "RG Antares-Alpha-NEU-RG " as azRgAlNe {
@@ -37,10 +36,10 @@ frame "Knight Frank" as azKf {
 
 actor user
 
-hubNe --> oos
-user -up-> hubNe : Request File 
+azWaNe --> oos  : Request File 
+user -up-> azWaNe : Request File 
 oos -down-> azWaNe : Read / Write
-hubNe -down-> azBsNe : Writes
+azWaNe -down-> azBsNe : Writes
 
 azWaNe -up-> azVpnNe : Discovery
 azVpnNe -up-> oos : Discovery
