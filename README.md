@@ -33,7 +33,7 @@ Step 2,
 * The Wopi Host retrieves the document from the storage and returns it to the OSS server to display.
 
 ### Shared Components
-* On the diagram the shared components, for administer reasons are all within the Northern Europe Subscription or the Wopi Host Resource group, but are global components that are accessible to both NE and WE WOPI resoiurce groups.
+* On the diagram the shared components, for administrative reasons, are all within the Northern Europe Subscription or the Wopi Host Resource group, but are global components and are accessible to both NE and WE WOPI resource groups.
 * CosmosDb
   * Used to store file meta data
 * Application insights 
