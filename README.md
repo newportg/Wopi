@@ -10,18 +10,17 @@ The HUB application generates marketing material in word document format, and st
 
 ## Implementation
 
-Probably the best way to descibe the infrastructure of this system is to build it a block at a time.
+Probably the best way to describe the infrastructure of this system is to build it a block at a time.
 
 Step 1,
-    Update the hub deployment to make the storage RA-GRS, this will automatically copy data contained in the storage account to a secondary data center. 
+    Update the hub deployment to make the storage RA-GRS, this will automatically copy data contained in the storage account to a secondary data centre. 
 * Make initial steps towards making the solution resistive to disaster conditions.
-  * The hub will need to be updated to make use of the circuit breaker pattern so it can read from the secondary data center if we encounter transient read failures on the primary.
+  * The hub will need to be updated to make use of the circuit breaker pattern so it can read from the secondary data centre if we encounter transient read failures on the primary.
   * If Microsoft determines there is a issue with the primary DC then it will flip writes to the secondary, and will manage the data correction when the primary DC is available again.
 * The key here is changing the storage account type to RA-GRS, changing the HUB Web Application to take advantage of this feature is not a necessary change at this point.
  
 
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiHubStorageRAGRS.puml)
-
 
 Step 2,
     If we just focus on Nortern Europe, we can see how the WOPI server connects to the hub. 
@@ -34,11 +33,16 @@ Step 2,
 * The Wopi Host retrieves the document from the storage and returns it to the OSS server to display.
 
 ### Shared Components
-* On the diagram the shared components, for adminster reasons are all within the Northern Europe Subscription or the Wopi Host Resource group, but are global components that are accessible to both NE and WE WOPI resoiurce groups.
-
+* On the diagram the shared components, for administer reasons are all within the Northern Europe Subscription or the Wopi Host Resource group, but are global components that are accessible to both NE and WE WOPI resoiurce groups.
+* CosmosDb
+  * Used to store file meta data
+* Application insights 
+  * Collects log information and can generate simple dashboard charts
+  * Log Analytics can provide deeper analysis of Application Insights data
+* Azure Active Directory (AAD)
+  * All the application components are registered to the Enterprise application via Managed Service Identity (MSI)
+  * All users should be assigned to the AAD and given appreciate permissions, preferable via groups.
 
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiSimple.puml)
 
-
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiBalanced2.puml)
-
