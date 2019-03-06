@@ -46,3 +46,15 @@ Step 2,
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiSimple.puml)
 
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiBalanced2.puml)
+
+
+## Current State of the POC
+
+The POC has been ongoing for some time on a adhoc basis due to issues that have been encountered and the reliance on other teams to help solve them.
+
+The solution includes a project which implements the Patterns and Practice demo application and an ARM Template deployment script.
+The solution has been designed so it can be torn down and redeployed at any time, and relies on the build agent to supply the relevant environmental secrets and connections. Building the application in this way allows us to build the application once and deploy it to many environments, the only difference being the injected values.
+
+![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiCurrentState.puml)
+
+
