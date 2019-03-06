@@ -17,6 +17,7 @@ Step 1,
 * Make initial steps towards making the solution resistive to disaster conditions.
   * The hub will need to be updated to make use of the circuit breaker pattern so it can read from the secondary data center if we encounter transient read failures on the primary.
   * If Microsoft determines there is a issue with the primary DC then it will flip writes to the secondary, and will manage the data correction when the primary dc is available again.
+* The key here is changing the storage account type to RA-GRS, changing the HUB Web Application to take advantage of this feature is not a necessary change at this point.
  
 
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiHubStorageRAGRS.puml)
@@ -25,7 +26,7 @@ Step 1,
 Step 2,
     If we just focus on Nortern Europe, we can see how the WOPI server connects to the hub. 
     
-* The Hub application creates documents and stores them in the storage
+* The Hub Web Application creates documents and stores them in the storage
 * The Hub Web Aplication would include a link to the document in the file store. 
 * When the use wishes to open the file then the filename and path should be passed to the Office Online Server (OOS) via a IFrame. 
 * The OOS calls the WOPI Host requesting the file.
