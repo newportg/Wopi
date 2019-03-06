@@ -15,7 +15,7 @@ Probably the best way to descibe the infrastructure of this system is to build i
 Step 1,
     Update the hub deployment to make the storage RA-GRS, this will automatically copy data contained in the storage account to a secondary data center. 
 * Make initial steps towards making the solution resistive to disaster conditions.
-  * The hub will need to be updated to make use of the circuit breaker pattern so it can read from the secondary data center if get transient read failures on the primary.
+  * The hub will need to be updated to make use of the circuit breaker pattern so it can read from the secondary data center if we encounter transient read failures on the primary.
   * If Microsoft determines there is a issue with the primary DC then it will flip writes to the secondary, and will manage the data correction when the primary dc is available again.
  
 

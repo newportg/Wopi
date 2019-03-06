@@ -30,6 +30,9 @@ frame "Azure Western Europe" as azRgWe {
     }
 }
 
+hubWe --> azVpnWe
+hubNe --> azVpnNe
+
 hubWe --> azBsNe : Write
 hubNe --> azBsNe : Write
 
