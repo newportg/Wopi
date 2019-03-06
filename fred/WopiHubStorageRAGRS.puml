@@ -1,0 +1,44 @@
+@startuml WOPI
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Networking/AzureVPNGateway.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+!includeurl AzurePuml/Compute/AzureVirtualMachine.puml
+
+
+frame "Azure Northern Europe" as azRgNe {
+    frame "Hub-Env-NEU-RG" as azRgHuNe {
+        AzureVirtualMachine( hubNe, "HUB", "Web Application")
+        AzureVPNGateway( azVpnNe, "VPN Gateway", "Hub-Env-NEU-Common-VN-VNG")
+        AzureBlobStorage( azBsNe, "File Storage RA-GRS", "kfhubenvneust01")
+    }
+}
+
+frame "Azure Western Europe" as azRgWe {
+    frame "Hub-Env-WEU-RG" as azRgHuWe {
+        AzureVPNGateway( azVpnWe, "VPN Gateway", "Hub-Env-WEU-Common-VN-VNG")
+        AzureBlobStorage( azBsWe, "File Storage RA-GRS Copy", "kfhubenvweust01")
+        AzureVirtualMachine( hubWe, "HUB", "Web Application")
+    }
+}
+
+hubWe --> azVpnWe
+hubNe --> azVpnNe
+
+hubWe --> azBsNe : Write
+hubNe --> azBsNe : Write
+
+hubNe ..> azBsWe : Failover
+hubWe ..> azBsWe : Failover
+
+azBsNe --> azBsWe : Copy
+
+@enduml

@@ -1,0 +1,54 @@
+@startuml WOPI
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Networking/AzureVPNGateway.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+!includeurl AzurePuml/Compute/AzureVirtualMachine.puml
+
+
+frame "Azure Northern Europe" as azRgNe {
+
+    frame "RG GN-WopiHost " as azRgWhNe {
+        AzureWebApp( azWaNe, "WOPI Host", "wopihost-webapp-dev-ne")
+        AzureCosmosDb( azDb, "DataStore", "wopihost-docdb-dev-ne")
+        AzureActiveDirectory( azAd, "Authentication", "azureteamknightfrank.onmicrosoft.com")
+        AzureApplicationInsights( azAi, "Logs/Analysis", "wopihost-appins-dev-ne")
+        AzureBlobStorage( azBsNe, "File Storage", "wopihoststrdevne")
+        AzureKeyVault( azKv, "KeyVault", "wopihost-kv-dev-ne")
+    }
+    
+    frame "RG Antares-Alpha-NEU-RG " as azRgAlNe {
+         AzureVPNGateway( azVpnNe, "VPN Gateway", "Hub-Env-NEU-Common-VN-VNG")
+    }
+}
+
+frame "Knight Frank" as azKf {
+    Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
+}
+
+actor user
+
+azWaNe --> oos  : Request File 
+user -up-> azWaNe : Request File 
+oos -down-> azWaNe : Read / Write
+azWaNe -down-> azBsNe : Writes
+
+azWaNe -up-> azVpnNe : Discovery
+azVpnNe -up-> oos : Discovery
+azWaNe --> azBsNe : Get / Put
+
+azWaNe -down-> azDb : Get / Put
+azWaNe -down-> azAd : Get
+azWaNe -down-> azAi : Put
+azWaNe -left-> azKv : Get
+
+
+@enduml
