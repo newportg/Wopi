@@ -45,6 +45,7 @@ frame "Shared Components" as azRgSh {
     AzureCosmosDb( azDb, "DataStore", "")
     AzureActiveDirectory( azAd, "Authentication", "")
     AzureApplicationInsights( azAi, "Logs/Analysis", "")
+	AzureKeyVault( azKv, "KeyVault", "Secrets")
 }
 
 azWaNe -right-> azRgSh
