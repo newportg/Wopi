@@ -26,7 +26,7 @@ Step 2,
     If we just focus on Northern Europe, we can see how the WOPI server connects to the hub. 
     
 * The Hub Web Application creates documents and stores them in the storage
-* The Hub Web Application would include a link to the document in the file store. 
+* The Hub Web Application would include a link to the document in the file store on its web pages. 
 * When the use wishes to open the file then the filename and path should be passed to the Office Online Server (OOS) via a IFrame. 
 * The OOS calls the WOPI Host requesting the file.
 * The Wopi Host validates that it can process the document by viewing the OOS Discovery document.
