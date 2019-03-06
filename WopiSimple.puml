@@ -19,10 +19,10 @@ frame "Azure Northern Europe" as azRGNe {
     frame "RG Hub" as azRgHuNe {
         Person( user, "Browser", "IFrame")
         AzureWebApp( hub, "HUB", "Web Application")
+        AzureBlobStorage( azBsNe, "File Storage", "Office documents")
     }
 
     frame "RG Wopi Host" as azRgWhNe {
-        AzureBlobStorage( azBsNe, "File Storage", "Office documents")
         AzureVPNGateway( azVpnNe, "VPN Gateway", "")
         AzureWebApp( azWaNe, "WOPI Host", "Provides Office Online access to the blob store")
     }
