@@ -43,10 +43,14 @@ Step 2,
   * All the application components are registered to the Enterprise application via Managed Service Identity (MSI)
   * All users should be assigned to the AAD and given appreciate permissions, preferable via groups.
 * Key Vault
-  * Keeper of all the secrets and connection strings.
+  * Keeper of secrets and connection strings.
   * This resource contains the unique values for this environment, enables the resource to redeployable
 
 ![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiSimple.puml)
+
+## Final redundant, balanced deployment
+
+This setup enables requests to be reouted to either datacenter and provides a level of redundancy and recovery.
 
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiBalanced2.puml)
 
