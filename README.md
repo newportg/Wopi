@@ -51,6 +51,7 @@ Step 2,
 ## Final redundant, balanced deployment
 
 This setup enables requests to be routed to either datacentre and provides a level of redundancy and recovery.
+The WOPI resource group would be separately deployable to the rest of the HUB application, although it will use the HUB storage account for its file store.
 
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiBalanced2.puml)
 
@@ -60,7 +61,10 @@ This setup enables requests to be routed to either datacentre and provides a lev
 The POC has been ongoing for some time on a adhoc basis due to issues that have been encountered and the reliance on other teams to help solve them.
 
 The solution includes a project which implements the Patterns and Practice demo application and an ARM Template deployment script.
-The solution has been designed so it can be torn down and redeployed at any time, and relies on the build agent to supply the relevant environmental secrets and connections. Building the application in this way allows us to build the application once and deploy it to many environments, the only difference being the injected values.
+The solution has been designed so it can be torn down and redeployed at any time, and relies on the build agent to supply the relevant environmental secrets and connections. Building the application in this way allows us to build the application once and deploy it to many environments, the only difference being the injected environmental values.
+
+### Current issue
+Currently the WopiHost is unable to see the Office Online Server, even though the VNet gateway is configure to let traffic flow. The application is currently configured inside the DEV subscription and uses the VNet Gateway in the Antares-Alpha-NEU-RG resource group.
 
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiCurrentState.puml)
 
