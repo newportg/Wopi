@@ -50,7 +50,7 @@ Step 2,
 
 ## Final redundant, balanced deployment
 
-This setup enables requests to be reouted to either datacenter and provides a level of redundancy and recovery.
+This setup enables requests to be routed to either datacentre and provides a level of redundancy and recovery.
 
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/WopiBalanced2.puml)
 
