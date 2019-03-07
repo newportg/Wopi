@@ -64,7 +64,8 @@ The solution includes a project which implements the Patterns and Practice demo 
 The solution has been designed so it can be torn down and redeployed at any time, and relies on the build agent to supply the relevant environmental secrets and connections. Building the application in this way allows us to build the application once and deploy it to many environments, the only difference being the injected environmental values.
 
 ### Current issue
-Currently the WopiHost is unable to see the Office Online Server, even though the VNet gateway is configure to let traffic flow. The application is currently configured inside the DEV subscription and uses the VNet Gateway in the Antares-Alpha-NEU-RG resource group.
+Currently the Antares-Alpha-NEU-RG VNet Gateway can see the wopi Office Online Server, but unfortunately the WOPIHost RG cannot.
+The issue lies in the routing, James is working through the issues.
 
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiCurrentState.puml)
 

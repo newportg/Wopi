@@ -41,14 +41,13 @@ user -up-> azWaNe : Request File
 oos -down-> azWaNe : Read / Write
 azWaNe -down-> azBsNe : Writes
 
-azWaNe -up-> azVpnNe : Discovery
-azVpnNe -up-> oos : Discovery
+azWaNe -[bold,#red]up-> azVpnNe : Discovery
+azVpnNe -[bold,#green]up-> oos : Discovery
 azWaNe --> azBsNe : Get / Put
 
 azWaNe -down-> azDb : Get / Put
 azWaNe -down-> azAd : Get
 azWaNe -down-> azAi : Put
 azWaNe -left-> azKv : Get
-
 
 @enduml
