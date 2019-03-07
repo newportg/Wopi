@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wopi-discovery>
+<net-zone name="internal-https">
+<app name="Excel" checkLicense="true" bootstrapperUrl="https://wopi.hub.knightfrank.com/x/_layouts/app_scripts/excel-boot.min.js" favIconUrl="https://wopi.hub.knightfrank.com/x/_layouts/resources/FavIcon_Excel.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="csv"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ods"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xls"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xlsb"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xlsm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xlsx"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="ods" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsb" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsm" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsx" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="ods" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="xlsx" requires="update"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="csv"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xls"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/ExcelConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="csv" requires="update" targetext="xlsx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/ExcelConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xls" requires="update" targetext="xlsx"/>
+<action name="formsubmit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlform.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="formsubmit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlform.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="formsubmit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlform.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="formedit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormEdit&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="formedit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormEdit&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="formedit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormEdit&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlrestinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlrestinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlrestinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" progid="Excel.LegacyWebService"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ods"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xls"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xlsb"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xlsm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xlsx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="ods"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="xlsb"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="xlsm"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="xlsx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="ods"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xls"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xlsb"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xlsm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xlsx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=excel" ext="xlsb"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=excel" ext="xlsm"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=excel" ext="xlsx"/>
+<action name="formpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormPreview&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="formpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormPreview&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="formpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormPreview&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="ods"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xls"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xlsb"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xlsm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xlsx"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="csv"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="ods"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xls"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsb"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsm"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsx"/>
+</app>
+<app name="OneNote" checkLicense="true" favIconUrl="https://wopi.hub.knightfrank.com/o/resources/1033/FavIcon_OneNote.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers" progid="OneNote.Notebook"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers" useParent="true"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" requires="cobalt,containers,update" progid="OneNote.Notebook"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" ext="one" requires="cobalt,containers,update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers,update" progid="OneNote.Notebook" newprogid="OneNote.Notebook"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers,update" newprogid="OneNote.Notebook"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onepkg" requires="cobalt,containers,update" newprogid="OneNote.Notebook"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers,update" progid="OneNote.Notebook"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers,update"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+<action name="embededit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=1&singlepage=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="one"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="onetoc2"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=e&usescript=1&<ui=UI_LLCC>" ext="one"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=e&usescript=1&<ui=UI_LLCC>" ext="onetoc2"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=v&usescript=1&<ui=UI_LLCC>" ext="one"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=v&usescript=1&<ui=UI_LLCC>" ext="onetoc2"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/o/SkypeProxy.ashx" ext="one"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/o/SkypeProxy.ashx" ext="onetoc2"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers,update" progid="OneNote.Notebook"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers,update"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+</app>
+<app name="PowerPoint" checkLicense="true" bootstrapperUrl="https://wopi.hub.knightfrank.com/p/PptScripts/powerpoint.boot.js" favIconUrl="https://wopi.hub.knightfrank.com/p/resources/1033/FavIcon_Ppt.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="odp"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pot"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="potm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="potx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pps"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ppsm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ppsx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ppt"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pptm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pptx"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="odp" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="ppsx" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="pptx" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&New=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="odp" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&New=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="pptx" requires="update"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="odp"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="odp"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="odp"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pot"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="potm"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="potx"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pps"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="ppsm"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="ppsx"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="ppt"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pptm"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pptx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pot"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="potm"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="potx"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pps"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="ppsm"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="ppsx"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="ppt"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pptm"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pptx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/p/PptConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps" targetext="pptx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/p/PptConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt" targetext="pptx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="odp"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pot"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="potm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="potx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pps"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ppsm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ppsx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ppt"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pptm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pptx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="odp"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="ppsx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="pptx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="odp"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pot"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="potm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="potx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pps"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="ppsm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="ppsx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="ppt"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pptm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pptx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=powerpoint" ext="potx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=powerpoint" ext="ppsx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=powerpoint" ext="pptx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="odp"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pot"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="potm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="potx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pps"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="ppsm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="ppsx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="ppt"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pptm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pptx"/>
+<action name="preloadunifiedapp" urlsrc="https://wopi.hub.knightfrank.com/pods/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="pptx"/>
+</app>
+<app name="Word" checkLicense="true" bootstrapperUrl="https://wopi.hub.knightfrank.com/wv/App_Scripts/word.boot.js" favIconUrl="https://wopi.hub.knightfrank.com/wv/resources/1033/FavIcon_Word.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="doc"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="docm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="docx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="dot"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="dotm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="dotx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="odt"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="rtf"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docm" requires="locks,update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docx" requires="locks,update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="odt" requires="locks,update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&>" ext="docx" requires="locks,update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&>" ext="dotx" requires="locks,update" newext="docx"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&>" ext="odt" requires="locks,update"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="odt"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="rtf"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="odt"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="rtf"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="odt"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="rtf"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/we/WordConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc" targetext="docx"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/ocs/RichApi.ashx?app=word" ext="docx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="doc"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="docm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="docx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="dot"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="dotm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="dotx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="odt"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/we/StaticLoad.aspx?wx=w&wv=e&usescript=1&<ui=UI_LLCC>" ext="docm"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/we/StaticLoad.aspx?wx=w&wv=e&usescript=1&<ui=UI_LLCC>" ext="docx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/we/StaticLoad.aspx?wx=w&wv=e&usescript=1&<ui=UI_LLCC>" ext="odt"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="doc"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="docm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="docx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="dot"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="dotm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="dotx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="odt"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="rtf"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=word" ext="docx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="doc"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="docm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="docx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="dot"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="dotm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="dotx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="odt"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="doc"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docm"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docx" requires="cobalt"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="dot"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="dotm"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="dotx"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="odt"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="rtf"/>
+</app>
+<app name="WordPdf" checkLicense="true" favIconUrl="https://wopi.hub.knightfrank.com/wv/resources/1033/FavIcon_Word.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" ext="pdf"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pdf"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="pdf"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+</app>
+</net-zone>
+<net-zone name="external-https">
+<app name="Excel" checkLicense="true" bootstrapperUrl="https://wopi.hub.knightfrank.com/x/_layouts/app_scripts/excel-boot.min.js" favIconUrl="https://wopi.hub.knightfrank.com/x/_layouts/resources/FavIcon_Excel.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="csv"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ods"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xls"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xlsb"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xlsm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="xlsx"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="ods" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsb" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsm" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsx" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="ods" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="xlsx" requires="update"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="csv"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xls"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembed.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/ExcelConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="csv" requires="update" targetext="xlsx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/ExcelConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xls" requires="update" targetext="xlsx"/>
+<action name="formsubmit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlform.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="formsubmit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlform.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="formsubmit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlform.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="formedit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormEdit&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="formedit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormEdit&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="formedit" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormEdit&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlrestinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlrestinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlrestinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="syndicate" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/exceljs.ashx?v=1&dsipb=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" progid="Excel.LegacyWebService"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="legacywebservice" urlsrc="https://wopi.hub.knightfrank.com/x/_vti_bin/excelserviceinternal.asmx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ods"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xls"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xlsb"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xlsm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="xlsx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="ods"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="xlsb"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="xlsm"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=e&usescript=1&<ui=UI_LLCC>" ext="xlsx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="ods"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xls"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xlsb"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xlsm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/x/StaticLoad.aspx?wx=x&wv=v&usescript=1&<ui=UI_LLCC>" ext="xlsx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=excel" ext="xlsb"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=excel" ext="xlsm"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=excel" ext="xlsx"/>
+<action name="formpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormPreview&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="formpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormPreview&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="formpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?edit=1&startupDialog=FormPreview&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="ods"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xls"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xlsb"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xlsm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/SkypeProxy.ashx" ext="xlsx"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="embedpreview" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedpreview.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ods"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsb"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsm"/>
+<action name="embedconfigurator" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlembedconfigurator.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="xlsx"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="csv"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="ods"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xls"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsb"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsm"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/x/_layouts/xlviewerinternal.aspx?unified=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="xlsx"/>
+</app>
+<app name="OneNote" checkLicense="true" favIconUrl="https://wopi.hub.knightfrank.com/o/resources/1033/FavIcon_OneNote.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers" progid="OneNote.Notebook"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers" useParent="true"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" requires="cobalt,containers,update" progid="OneNote.Notebook"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" ext="one" requires="cobalt,containers,update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers,update" progid="OneNote.Notebook" newprogid="OneNote.Notebook"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers,update" newprogid="OneNote.Notebook"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?edit=1&new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onepkg" requires="cobalt,containers,update" newprogid="OneNote.Notebook"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers,update" progid="OneNote.Notebook"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers,update"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=0&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+<action name="embededit" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?embed=1&edit=1&singlepage=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="one"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="onetoc2"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=e&usescript=1&<ui=UI_LLCC>" ext="one"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=e&usescript=1&<ui=UI_LLCC>" ext="onetoc2"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=v&usescript=1&<ui=UI_LLCC>" ext="one"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/o/StaticLoad.aspx?wx=o&wv=v&usescript=1&<ui=UI_LLCC>" ext="onetoc2"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/o/SkypeProxy.ashx" ext="one"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/o/SkypeProxy.ashx" ext="onetoc2"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" requires="cobalt,containers,update" progid="OneNote.Notebook"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="one" requires="cobalt,containers,update"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/o/onenoteframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="onetoc2" requires="cobalt,containers,update" useParent="true"/>
+</app>
+<app name="PowerPoint" checkLicense="true" bootstrapperUrl="https://wopi.hub.knightfrank.com/p/PptScripts/powerpoint.boot.js" favIconUrl="https://wopi.hub.knightfrank.com/p/resources/1033/FavIcon_Ppt.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="odp"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pot"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="potm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="potx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pps"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ppsm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ppsx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="ppt"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pptm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="pptx"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="odp" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="ppsx" requires="update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="pptx" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&New=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="odp" requires="update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=EditView&New=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><IsLicensedUser=BUSINESS_USER&>" ext="pptx" requires="update"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="odp"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/p/previewhandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="odp"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ReadingView&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="odp"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/p/PowerPointFrame.aspx?PowerPointView=ChromelessView&Embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="present" urlsrc="https://wopi.hub.knightfrank.com/m/Presenter.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pot"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="potm"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="potx"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pps"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="ppsm"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="ppsx"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="ppt"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pptm"/>
+<action name="presentservice" urlsrc="https://wopi.hub.knightfrank.com/m/present_2_0.asmx" ext="pptx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pot"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="potx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppsx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=0&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pptx"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pot"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="potm"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="potx"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pps"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="ppsm"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="ppsx"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="ppt"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pptm"/>
+<action name="attendservice" urlsrc="https://wopi.hub.knightfrank.com/m/met/participant.svc" ext="pptx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/p/PptConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="pps" targetext="pptx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/p/PptConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&>" ext="ppt" targetext="pptx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="odp"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pot"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="potm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="potx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pps"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ppsm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ppsx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="ppt"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pptm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pptx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="odp"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="ppsx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="pptx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="odp"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pot"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="potm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="potx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pps"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="ppsm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="ppsx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="ppt"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pptm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/p/StaticLoad.aspx?wx=p&wv=v&usescript=1&<ui=UI_LLCC>" ext="pptx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=powerpoint" ext="potx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=powerpoint" ext="ppsx"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=powerpoint" ext="pptx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="odp"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pot"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="potm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="potx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pps"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="ppsm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="ppsx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="ppt"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pptm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/p/SkypeProxy.ashx" ext="pptx"/>
+<action name="preloadunifiedapp" urlsrc="https://wopi.hub.knightfrank.com/pods/StaticLoad.aspx?wx=p&wv=e&usescript=1&<ui=UI_LLCC>" ext="pptx"/>
+</app>
+<app name="Word" checkLicense="true" bootstrapperUrl="https://wopi.hub.knightfrank.com/wv/App_Scripts/word.boot.js" favIconUrl="https://wopi.hub.knightfrank.com/wv/resources/1033/FavIcon_Word.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="doc"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="docm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="docx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="dot"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="dotm"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="dotx"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="odt"/>
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" default="true" ext="rtf"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docm" requires="locks,update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docx" requires="locks,update"/>
+<action name="edit" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="odt" requires="locks,update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&>" ext="docx" requires="locks,update"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&>" ext="dotx" requires="locks,update" newext="docx"/>
+<action name="editnew" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?new=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&>" ext="odt" requires="locks,update"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="odt"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="rtf"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="odt"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="rtf"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="mobileView" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="odt"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="rtf"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="docx"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dot"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotm"/>
+<action name="attend" urlsrc="https://wopi.hub.knightfrank.com/m/ParticipantFrame.aspx?a=1&<e=EMBEDDED&><fs=FULLSCREEN&><rec=RECORDING&><thm=THEME_ID&><na=DISABLE_ASYNC&><vp=DISABLE_BROADCAST&><ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="dotx"/>
+<action name="convert" urlsrc="https://wopi.hub.knightfrank.com/we/WordConvertAndEdit.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="doc" targetext="docx"/>
+<action name="rest" urlsrc="https://wopi.hub.knightfrank.com/ocs/RichApi.ashx?app=word" ext="docx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="doc"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="docm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="docx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="dot"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="dotm"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="dotx"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="odt"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/we/StaticLoad.aspx?wx=w&wv=e&usescript=1&<ui=UI_LLCC>" ext="docm"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/we/StaticLoad.aspx?wx=w&wv=e&usescript=1&<ui=UI_LLCC>" ext="docx"/>
+<action name="preloadedit" urlsrc="https://wopi.hub.knightfrank.com/we/StaticLoad.aspx?wx=w&wv=e&usescript=1&<ui=UI_LLCC>" ext="odt"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="doc"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="docm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="docx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="dot"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="dotm"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="dotx"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="odt"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="rtf"/>
+<action name="collab" urlsrc="https://wopi.hub.knightfrank.com/ocs/Join.ashx?app=word" ext="docx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="doc"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="docm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="docx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="dot"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="dotm"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="dotx"/>
+<action name="documentchat" urlsrc="https://wopi.hub.knightfrank.com/we/SkypeProxy.ashx" ext="odt"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="doc"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docm"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/we/wordeditorframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="docx" requires="cobalt"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="dot"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="dotm"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="dotx"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="odt"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&><IsLicensedUser=BUSINESS_USER&><actnavid=ACTIVITY_NAVIGATION_ID&>" ext="rtf"/>
+</app>
+<app name="WordPdf" checkLicense="true" favIconUrl="https://wopi.hub.knightfrank.com/wv/resources/1033/FavIcon_Word.ico">
+<action name="view" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" default="true" ext="pdf"/>
+<action name="imagepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/WordPreviewHandler.ashx?PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+<action name="interactivepreview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+<action name="embedview" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?embed=1&PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+<action name="rtc" urlsrc="https://wopi.hub.knightfrank.com/rtc2/" ext="pdf"/>
+<action name="preloadview" urlsrc="https://wopi.hub.knightfrank.com/wv/StaticLoad.aspx?wx=w&wv=v&usescript=1&<ui=UI_LLCC>" ext="pdf"/>
+<action name="open" urlsrc="https://wopi.hub.knightfrank.com/wv/wordviewerframe.aspx?PdfMode=1&<ui=UI_LLCC&><rs=DC_LLCC&><dchat=DISABLE_CHAT&><hid=HOST_SESSION_ID&><showpagestats=PERFSTATS&>" ext="pdf"/>
+</app>
+</net-zone>
+<proof-key exponent="AQAB" modulus="jnBVzBItZ/j1QzP5GhRUiHc/RzN10oDQ68fdcvlOKmbPUmkvgXD8jeFxpcCDDgP81qmuuzrxG9nfJgR3Z8+jGqR5t0C7Pexcei89vjpVFlgLKY8QEJMRpxDd/EqliZ8naxxomx7K4Nr6k9yncvf9uh1JqgkLNwq7SoKYVfBwE9teAdbtvSRfypw48ivikifN38kIFetsY5jiBOrXKArTXyO7WAB2SLCEgLYp6dayXDTkaBdoPuCgAavZppaYVnrpEx+VCvflxs57MdbuNNIm+Ob4WWF35cExSZUQNN2iu4q/xKMg2Oey5MvqYcuruQteEuZufev8KA2YMjeNGtEmHQ==" value="BgIAAACkAABSU0ExAAgAAAEAAQAdJtEajTcymA0o/Ot9buYSXgu5q8th6svksufYIKPEv4q7ot00EJVJMcHld2FZ+Ob4JtI07tYxe87G5fcKlR8T6XpWmJam2asBoOA+aBdo5DRcstbpKbaAhLBIdgBYuyNf0woo1+oE4phjbOsVCMnfzSeS4ivyOJzKXyS97dYBXtsTcPBVmIJKuwo3CwmqSR26/fdyp9yT+trgyh6baBxrJ5+JpUr83RCnEZMQEI8pC1gWVTq+PS96XOw9u0C3eaQao89ndwQm39kb8Tq7rqnW/AMOg8ClceGN/HCBL2lSz2YqTvly3cfr0IDSdTNHP3eIVBQa+TND9fhnLRLMVXCO" oldexponent="AQAB" oldmodulus="qDDUAxTjBmNaNAZtHlvuLeRDqG9ZKdgdUrzislaGnMWh2DdWVpJvw1KrMVzr2Hi3F/X76+zcUWmQKSxq6j0pF32mnENKPM0/KsfDpf7Dvwqla0ppNzcluD9k+01wzYGG2nbebekAMqWfivOJl87r75tasqxTJqrywoDeSwdIdfxnbMzl+tGmsqN44Yc6GTJJr0M+/MUI8BPp3edKofveVTmiMof9FMrr6T1bADrgAIUCqbGafQh2ORsdiQU8SBkxM+hep3/V01D6DvwXGlmupaEmtR8ZHY5UUb+MdgV8Hcl+pN9+fbMS+bURtsX66fhofK3ZGxlzovSdx9j3jJLAcw==" oldvalue="BgIAAACkAABSU0ExAAgAAAEAAQBzwJKM99jHnfSicxkb2a18aPjp+sW2EbX5ErN9ft+kfskdfAV2jL9RVI4dGR+1JqGlrlkaF/wO+lDT1X+nXugzMRlIPAWJHRs5dgh9mrGpAoUA4DoAWz3p68oU/YcyojlV3vuhSufd6RPwCMX8PkOvSTIZOofheKOyptH65cxsZ/x1SAdL3oDC8qomU6yyWpvv686XifOKn6UyAOlt3nbahoHNcE37ZD+4JTc3aUprpQq/w/6lw8cqP808SkOcpn0XKT3qaiwpkGlR3Ozr+/UXt3jY61wxq1LDb5JWVjfYocWchlay4rxSHdgpWW+oQ+Qt7lsebQY0WmMG4xQD1DCo"/>
+</wopi-discovery>

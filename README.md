@@ -69,4 +69,65 @@ The issue lies in the routing, James is working through the issues.
 
 ![Wopi Balanced](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiCurrentState.puml)
 
+### 
+After commenting out the OOS interaction I have been able to see how the WopiHost handles its files. 
+The demo interface consists of a file list, as there are no files in the repository the list is empty.
+The headdings bar is active, so you can drag any file onto the heading and it will instigate a file upload.
+With the OOS connections disabled the host is not doing any validation, so it will take anything and store it.
+The file information is stored in the cosmos db and a encrypted file is stored in the file repository.
+One thing to note, as this is storing a new file, it creates a container(directory) in the stroage which is named after the user.
+
+![Wopi filestore](https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/filestore.PNG)
+
+![Wopi filestore](https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/cosmosdb.PNG)
+
+The JSON record that is in the database looks like this.
+Most of the elements a null, or default, as it hasnt been able to populate it with data from discovery.
+
+```JSON
+{
+    "UserId": null,
+    "CloseUrl": null,
+    "HostEditUrl": null,
+    "HostViewUrl": null,
+    "SupportsCoauth": false,
+    "SupportsExtendedLockLength": false,
+    "SupportsFileCreation": false,
+    "SupportsFolders": false,
+    "SupportsGetLock": true,
+    "SupportsLocks": true,
+    "SupportsRename": true,
+    "SupportsScenarioLinks": false,
+    "SupportsSecureStore": false,
+    "SupportsUpdate": true,
+    "SupportsUserInfo": true,
+    "LicensesCheckForEditIsEnabled": true,
+    "ReadOnly": false,
+    "RestrictedWebViewOnly": false,
+    "UserCanAttend": false,
+    "UserCanNotWriteRelative": false,
+    "UserCanPresent": false,
+    "UserCanRename": true,
+    "UserCanWrite": true,
+    "WebEditingDisabled": false,
+    "Actions": null,
+    "id": "40f424a1-3aed-498c-b929-92a35152a16e",
+    "LockValue": null,
+    "LockExpires": null,
+    "OwnerId": "gary.newport@knightfrank.com",
+    "BaseFileName": "120027 - [Tech] EPC Graph.docx",
+    "Container": "gary-newport-knightfrank-com",
+    "Size": 1505043,
+    "Version": 1,
+    "UserInfo": null,
+    "_rid": "UjJIANtWPJoBAAAAAAAAAA==",
+    "_self": "dbs/UjJIAA==/colls/UjJIANtWPJo=/docs/UjJIANtWPJoBAAAAAAAAAA==/",
+    "_etag": "\"5b003fb8-0000-0000-0000-5c812a770000\"",
+    "_attachments": "attachments/",
+    "_ts": 1551968887
+}
+```
+
+
+
 
