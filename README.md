@@ -77,12 +77,13 @@ With the OOS connections disabled the host is not doing any validation, so it wi
 The file information is stored in the cosmos db and a encrypted file is stored in the file repository.
 One thing to note, as this is storing a new file, it creates a container(directory) in the stroage which is named after the user.
 
-![Wopi filestore](https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/filestore.PNG)
+![Wopi filestore](/puml/filestore.PNG)
 
-![Wopi filestore](https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/cosmosdb.PNG)
+![Wopi cosmosdb](/puml/cosmosdb.PNG)
 
-The JSON record that is in the database looks like this.
+The JSON record that is in the database is included below.
 Most of the elements a null, or default, as it hasnt been able to populate it with data from discovery.
+Also the name of the file and container it resides is specified here..
 
 ```JSON
 {
