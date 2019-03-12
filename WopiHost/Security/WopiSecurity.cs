@@ -117,13 +117,16 @@ namespace com.microsoft.dx.officewopi.Security
         /// </summary>
         private static X509Certificate2 getCert()
         {
-            var certPath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~"), "OfficeWopi.pfx");
-            var certfile = System.IO.File.OpenRead(certPath);
-            var certificateBytes = new byte[certfile.Length];
-            certfile.Read(certificateBytes, 0, (int)certfile.Length);
+            //var certPath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~"), "OfficeWopi.pfx");
+            //var certfile = System.IO.File.OpenRead(certPath);
+            //var certificateBytes = new byte[certfile.Length];
+            //certfile.Read(certificateBytes, 0, (int)certfile.Length);
+
+            var certificateBytes = ConfigurationManager.AppSettings["CertPfxBase64"];
             var cert = new X509Certificate2(
                 certificateBytes,
-                ConfigurationManager.AppSettings["CertPassword"],
+                //ConfigurationManager.AppSettings["CertPassword"],
+                ConfigurationManager.AppSettings["CertPfxPassword"],
                 X509KeyStorageFlags.Exportable |
                 X509KeyStorageFlags.MachineKeySet |
                 X509KeyStorageFlags.PersistKeySet);

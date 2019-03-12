@@ -59,10 +59,6 @@ namespace com.microsoft.dx.officewopi.Utils
         {
             List<WopiAction> actions = new List<WopiAction>();
 
-            var result = await new Url("https://wopi.hub.knightfrank.com/hosting/discovery")
-    .AllowAnyHttpStatus()
-    .GetStringAsync();
-
             // Determine if the discovery data is cached
             MemoryCache memoryCache = MemoryCache.Default;
             if (memoryCache.Contains("DiscoData"))
