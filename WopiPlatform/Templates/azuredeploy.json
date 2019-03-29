@@ -3,34 +3,48 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "para_acronym_region": {
-      "type": "string"
+      "type": "string",
+      "allowedValues": [
+        "ne",
+        "we"
+      ],
+      "defaultValue": "ne"
     },
     "para_acronym_resgrp": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "rg"
     },
     "para_acronym_appsvc": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "appsvc"
     },
     "para_acronym_svcpln": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "svcpln"
     },
     "para_acronym_stract": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "str"
     },
     "para_acronym_kv": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "kv"
     },
     "para_acronym_azfunc": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "fn"
     },
     "para_acronym_appin": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "appins"
     },
     "para_acronym_webapp": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "webapp"
     },
     "para_acronym_docdb": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "docdb"
     },
 
     "para_application_id": {
@@ -82,8 +96,20 @@
     "para_svcPlanCapacity": {
       "type": "string",
       "defaultValue": "1"
-    }
+    },
+    "para_vnet_name": {
+      "type": "string"
 
+    },
+    "para_vnet_resourcegroup": {
+      "type": "string"
+    },
+    "cert": {
+      "type": "securestring"
+    },
+    "certPass": {
+      "type": "securestring"
+    }
   },
   "variables": {
     "var_sub_id": "[subscription().subscriptionId]",
@@ -104,7 +130,8 @@
     "var_docdb_name": "[concat(parameters('para_application_name'), '-',parameters('para_acronym_docdb'),'-', variables('var_env_region'))]",
     "var_cert_name": "[concat( tolower(parameters('para_application_name')), uniqueString(resourceGroup().id))]",
 
-    "var_svc_prin": "[concat(resourceId('Microsoft.Web/sites', variables('var_webapp_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]"
+    "var_svc_prin": "[concat(resourceId('Microsoft.Web/sites', variables('var_webapp_name')),'/providers/Microsoft.ManagedIdentity/Identities/default')]",
+    "var_vnet_resourceid": "[concat('/subscriptions/',variables('var_sub_id'),'/resourceGroups/', parameters('para_vnet_resourcegroup'), '/providers/Microsoft.Network/virtualNetworks/', parameters('para_vnet_name') )]"
   },
   "resources": [
     {
@@ -233,7 +260,14 @@
                 "delete",
                 "recover",
                 "backup",
-                "restore"
+                "restore",
+                "decrypt",
+                "encrypt",
+                "unwrapKey",
+                "wrapKey",
+                "verify",
+                "sign",
+                "purge"
               ],
               "secrets": [
                 "get",
@@ -242,7 +276,8 @@
                 "delete",
                 "recover",
                 "backup",
-                "restore"
+                "restore",
+                "purge"
               ]
             },
             "tenantId": "[variables('var_ten_id')]"
@@ -250,7 +285,7 @@
         ],
         "enabledForDeployment": false,
         "enabledForDiskEncryption": false,
-        "enabledForTemplateDeployment": false,
+        "enabledForTemplateDeployment": true,
         "sku": {
           "family": "A",
           "name": "standard"
@@ -275,6 +310,7 @@
       "location": "[resourceGroup().location]",
       "name": "[concat(variables('var_kv_name'), '/', parameters('para_kvSecretsObject').secrets[copyIndex()].secretName)]",
       "properties": {
+        "contentType": "[parameters('para_kvSecretsObject').secrets[copyIndex()].contentType]",
         "value": "[parameters('para_kvSecretsObject').secrets[copyIndex()].secretValue]"
       },
       "tags": {
@@ -331,49 +367,61 @@
         "name": "[variables('var_webapp_name')]",
         "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
         "siteConfig": {
-          "appSettings": [
-            {
-              "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-              "value": "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]"
-            },
-            {
-              "Name": "ddb:endpoint",
-              "Value": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]"
-            },
-            {
-              "Name": "ddb:authKey",
-              "Value": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]"
-            },
-            {
-              "Name": "ddb:database",
-              "Value": "WopiDb"
-            },
-            {
-              "Name": "abs:Protocol",
-              "Value": "https"
-            },
-            {
-              "Name": "abs:AccountName",
-              "Value": "[variables('var_str_name')]"
-            },
-            {
-              "Name": "abs:AccountKey",
-              "Value": "[listKeys( resourceId('Microsoft.Storage/storageAccounts', variables('var_str_name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
-            },
-            {
-              "Name": "WopiDiscovery",
-              "value": "https://wopi.hub.knightfrank.com/hosting/discovery"
-            },
-            {
-              "Name": "ida:AADInstance",
-              "value": "https://login.microsoftonline.com/"
-            },
-            {
-              "Name": "ida:PostLogoutRedirectUri",
-              "Value": "[concat(variables('var_webapp_name'), '.azurewebsites.net')]"
-            }
-          ],
-
+          //"appSettings": [
+          //  {
+          //    "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+          //    "value": "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]"
+          //  },
+          //  {
+          //    "Name": "ddb:endpoint",
+          //    "Value": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]"
+          //  },
+          //  {
+          //    "Name": "ddb:authKey",
+          //    "Value": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]"
+          //  },
+          //  {
+          //    "Name": "ddb:database",
+          //    "Value": "WopiDb"
+          //  },
+          //  {
+          //    "Name": "abs:Protocol",
+          //    "Value": "https"
+          //  },
+          //  {
+          //    "Name": "abs:AccountName",
+          //    "Value": "[variables('var_str_name')]"
+          //  },
+          //  {
+          //    "Name": "abs:AccountKey",
+          //    "Value": "[listKeys( resourceId('Microsoft.Storage/storageAccounts', variables('var_str_name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
+          //  },
+          //  {
+          //    "Name": "WopiDiscovery",
+          //    "value": "https://wopi.hub.knightfrank.com/hosting/discovery"
+          //  },
+          //  {
+          //    "Name": "ida:AADInstance",
+          //    "value": "https://login.microsoftonline.com/"
+          //  },
+          //  {
+          //    "Name": "ida:PostLogoutRedirectUri",
+          //    "Value": "[concat(variables('var_webapp_name'), '.azurewebsites.net')]"
+          //  },
+          //  {
+          //    "Name": "ida:ClientId",
+          //    "Value": "[parameters('para_application_id')]"
+          //  },
+          //  {
+          //    "Name": "ida:ClientSecret",
+          //    "Value": "(rk%/:C(/&$]=O]%eq.0@l-_9/"
+          //  },
+          //  {
+          //    "Name": "WEBSITE_LOAD_CERTIFICATES",
+          //    "Value": "FCA004BF226B569223ACCC3ED10345CE5700DAFF"
+          //  }
+          //],
+          "vnetName": "[parameters('para_vnet_name')]",
           "siteAuthSettings": {
             "clientId": "[parameters('para_application_id')]",
             "enabled": true,
@@ -389,12 +437,81 @@
         },
         "siteName": "[variables('var_webapp_name')]"
       },
+      "resources": [
+        {
+          "apiVersion": "2015-08-01",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/sites', variables('var_webapp_name'))]",
+            "[resourceId('Microsoft.KeyVault/vaults/', variables('var_kv_name'))]",
+            "secretsCopy"
+          ],
+          "name": "appsettings",
+          "properties": {
+            "CertPfxBase64": "[concat('@Microsoft.KeyVault(SecretUri=', reference('CertPfxBase64').secretUriWithVersion, ')')]",
+            "CertPfxPassword": "[concat('@Microsoft.KeyVault(SecretUri=', reference('CertPfxPassword').secretUriWithVersion, ')')]",
+            "APPINSIGHTS_INSTRUMENTATIONKEY" : "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]",
+            "ddb:endpoint": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]",
+            "ddb:authKey":"[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]",
+            "ddb:database": "WopiDb",
+            "abs:Protocol": "https",
+            "abs:AccountName": "[variables('var_str_name')]",
+            "abs:AccountKey": "[listKeys( resourceId('Microsoft.Storage/storageAccounts', variables('var_str_name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]",
+            "WopiDiscovery": "https://wopi.hub.knightfrank.com/hosting/discovery",
+            "ida:AADInstance": "https://login.microsoftonline.com/",
+            "ida:PostLogoutRedirectUri": "[concat(variables('var_webapp_name'), '.azurewebsites.net')]",
+            "ida:ClientId": "[parameters('para_application_id')]",
+            "ida:ClientSecret": "(rk%/:C(/&$]=O]%eq.0@l-_9/",
+            "WEBSITE_LOAD_CERTIFICATES": "FCA004BF226B569223ACCC3ED10345CE5700DAFF"
+          },
+          "tags": {
+            "displayName": "AppSettings"
+          },
+          "type": "config"
+        }
+      ],
       "tags": {
         "displayName": "WebApp"
       },
       "type": "Microsoft.Web/sites"
+    },
+    {
+      "apiVersion": "2018-02-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('var_webapp_name'))]"
+      ],
+      "kind": "string",
+      "location": "[resourceGroup().location]",
+      "name": "[concat(variables('var_webapp_name'), '/', parameters('para_vnet_name'))]",
+      "properties": {
+        "vnetResourceId": "[variables('var_vnet_resourceid')]",
+        "resyncRequired": "true",
+        "isSwift": "false"
+      },
+      "resources": [],
+      "tags": {
+        "displayName": "Vnet Connection"
+      },
+      "type": "Microsoft.Web/sites/virtualNetworkConnections"
+    },
+    {
+      "apiVersion": "2015-08-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
+        "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
+        "secretsCopy"
+      ],
+      "location": "[resourceGroup().location]",
+      "name": "[variables('var_cert_name')]",
+      "properties": {
+        "pfxBlob": "[parameters('cert')]",
+        "password": "[parameters('certPass')]"
+      },
+      "scale": null,
+      "tags": {
+        "displayName": "Certificate"
+      },
+      "type": "Microsoft.Web/certificates"
     }
-
 
     //{
     //  "apiVersion": "2016-08-01",
@@ -413,10 +530,12 @@
     //  "type": "Microsoft.Web/sites/hostNameBindings"
     //}
 
+    // N.B This works if you load you cert via Powershell
     //{
     //  "apiVersion": "2016-03-01",
     //  "dependsOn": [
     //    "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]",
+    //    "[resourceId('Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
     //    "secretsCopy"
     //  ],
     //  "location": "[resourceGroup().location]",
@@ -424,36 +543,13 @@
     //  "properties": {
     //    "keyVaultId": "[resourceId(variables('var_sub_id'), resourceGroup().name, 'Microsoft.KeyVault/vaults', variables('var_kv_name'))]",
     //    "keyVaultSecretName": "CertPfxBase64",
-    //    "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('var_hstpln_name'))]"
+    //    "serverFarmId": "[resourceId(variables('var_sub_id'), resourceGroup().name, 'Microsoft.Web/serverfarms', variables('var_hstpln_name') )]"
     //  },
     //  "tags": {
     //    "displayName": "Certificate"
     //  },
     //  "type": "Microsoft.Web/certificates"
-    //},
-    //{
-    //  "apiVersion": "2015-08-01",
-    //  "dependsOn": [
-    //    "[resourceId('Microsoft.Web/certificates/', variables('var_cert_name'))]"
-    //  ],
-    //  "location": "[resourceGroup().location]",
-    //  "name": "[concat(variables('var_webapp_name'),'-hostNameSslStates')]",
-    //  "properties": {
-    //    "hostNameSslStates": [
-    //      {
-    //        "name": "[variables('var_public_url')]",
-    //        "sslState": "SniEnabled",
-    //        "thumbprint": "[reference(resourceId('Microsoft.Web/certificates', variables('var_cert_name')), providers('Microsoft.Web', 'certificates').apiVersions[0]).thumbprint]",
-    //        "hostType": "Standard",
-    //        "toUpdate": "true"
-    //      }
-    //    ]
-    //  },
-    //  "tags": {
-    //    "displayName": "WebApp HostNameSSL"
-    //  },
-    //  "type": "Microsoft.Web/sites"
     //}
-    ],
-      "outputs": {}
-    }
+  ],
+  "outputs": {}
+}

@@ -280,6 +280,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ApplicationInsights.config" />
+    <Content Include="hub_wildcard_cert_12_2018.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outputcer.der" />
     <None Include="Properties\PublishProfiles\officewopi - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\officewopi - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\wopihost-webapp-dev-ne - Web Deploy.pubxml" />
