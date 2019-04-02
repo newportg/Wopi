@@ -117,10 +117,9 @@ namespace com.microsoft.dx.officewopi.Security
         /// </summary>
         private static X509Certificate2 getCert()
         {
+            // Load Certificate from file
             //var certPath = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~"), "hub_wildcard_cert_12_2018.pfx");
-
             //X509Certificate2 cert = new X509Certificate2(certPath, ConfigurationManager.AppSettings["CertPfxPassword"]);
-
 
             //var certfile = System.IO.File.OpenRead(certPath);
             //var certificateBytes = new byte[certfile.Length];
@@ -135,28 +134,28 @@ namespace com.microsoft.dx.officewopi.Security
             //    X509KeyStorageFlags.PersistKeySet);
 
 
+            // Load Certificate from environment variables
             var certificateBytes = System.Environment.GetEnvironmentVariable("CertPfxBase64");
             var certPwd = System.Environment.GetEnvironmentVariable("CertPfxPassword");
             var certThumb = System.Environment.GetEnvironmentVariable("WEBSITE_LOAD_CERTIFICATES");
 
             byte[] p8bytes = Convert.FromBase64String(certificateBytes);
-            var certi = new X509Certificate2(p8bytes, certPwd);
-            Console.WriteLine(certi.FriendlyName);
+            var cert = new X509Certificate2(p8bytes, certPwd);
+            Console.WriteLine(cert.FriendlyName);
 
-
-            X509Certificate2 cert = new X509Certificate2();
-
-            X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
-            certStore.Open(OpenFlags.ReadOnly);
-            X509Certificate2Collection certCollection = certStore.Certificates.Find(X509FindType.FindByThumbprint, "FCA004BF226B569223ACCC3ED10345CE5700DAFF", false);
-            // Get the first cert with the thumbprint
-            if (certCollection.Count > 0)
-            {
-                cert = certCollection[0];
-                // Use certificate
-                Console.WriteLine(cert.FriendlyName);
-            }
-            certStore.Close();
+            // Load Certificate from store
+            //X509Certificate2 cert = new X509Certificate2();
+            //X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
+            //certStore.Open(OpenFlags.ReadOnly);
+            //X509Certificate2Collection certCollection = certStore.Certificates.Find(X509FindType.FindByThumbprint, "FCA004BF226B569223ACCC3ED10345CE5700DAFF", false);
+            //// Get the first cert with the thumbprint
+            //if (certCollection.Count > 0)
+            //{
+            //    cert = certCollection[0];
+            //    // Use certificate
+            //    Console.WriteLine(cert.FriendlyName);
+            //}
+            //certStore.Close();
 
             return cert;
         }

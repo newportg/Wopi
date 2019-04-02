@@ -226,7 +226,6 @@
       },
       "type": "Microsoft.DocumentDB/databaseAccounts"
     },
-
     {
       "apiVersion": "2016-10-01",
       "location": "[resourceGroup().location]",
@@ -449,9 +448,9 @@
           "properties": {
             "CertPfxBase64": "[concat('@Microsoft.KeyVault(SecretUri=', reference('CertPfxBase64').secretUriWithVersion, ')')]",
             "CertPfxPassword": "[concat('@Microsoft.KeyVault(SecretUri=', reference('CertPfxPassword').secretUriWithVersion, ')')]",
-            "APPINSIGHTS_INSTRUMENTATIONKEY" : "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]",
+            "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]",
             "ddb:endpoint": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]",
-            "ddb:authKey":"[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]",
+            "ddb:authKey": "[listKeys(resourceId('Microsoft.DocumentDb/databaseAccounts', variables('var_docdb_name')), '2015-04-08').primaryMasterKey]",
             "ddb:database": "WopiDb",
             "abs:Protocol": "https",
             "abs:AccountName": "[variables('var_str_name')]",
@@ -461,7 +460,13 @@
             "ida:PostLogoutRedirectUri": "[concat(variables('var_webapp_name'), '.azurewebsites.net')]",
             "ida:ClientId": "[parameters('para_application_id')]",
             "ida:ClientSecret": "(rk%/:C(/&$]=O]%eq.0@l-_9/",
-            "WEBSITE_LOAD_CERTIFICATES": "FCA004BF226B569223ACCC3ED10345CE5700DAFF"
+            "WEBSITE_LOAD_CERTIFICATES": "FCA004BF226B569223ACCC3ED10345CE5700DAFF",
+
+            "AuthorizationUri": "https://login.microsoftonline.com",
+            "AADGraphResourceId": "https://graph.windows.net",
+            "MicrosoftGraphResourceId": "https://graph.microsoft.com",
+            //"Audience": "https://officewopi.azurewebsites.net",
+            "Audience": "https://wopi.hub.knightfrank.com"
           },
           "tags": {
             "displayName": "AppSettings"

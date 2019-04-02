@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "puml", "puml", "{3D771026-5
 		puml\WopiBalanced.puml = puml\WopiBalanced.puml
 		puml\WopiBalanced2.puml = puml\WopiBalanced2.puml
 		puml\WopiCurrentState.puml = puml\WopiCurrentState.puml
+		WopiDemoSequence.puml = WopiDemoSequence.puml
 		puml\WopiHubStorageRAGRS.puml = puml\WopiHubStorageRAGRS.puml
 		puml\WopiSimple.puml = puml\WopiSimple.puml
 	EndProjectSection

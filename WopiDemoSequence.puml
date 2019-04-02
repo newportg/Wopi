@@ -1,0 +1,17 @@
+@startuml
+
+Browser -> WOPI: Drop File
+WOPI --> DB : Save File
+WOPI --> DB : Get List
+WOPI --> Browser: File List
+Browser --> WOPI : View File
+WOPI --> DB : Get File Detail
+WOPI --> Browser : Return View Url
+Browser --> Office : Pass Url
+Office --> WOPI : Request File
+WOPI --> DB : Request File
+DB --> WOPI : Return File
+WOPI --> Office : Return File
+Office --> Browser : Display File
+
+@enduml
