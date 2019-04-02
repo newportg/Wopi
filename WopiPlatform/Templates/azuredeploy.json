@@ -347,7 +347,7 @@
       "type": "Microsoft.Web/serverfarms"
     },
     {
-      "apiVersion": "2016-08-01",
+      "apiVersion": "2015-08-01",
       "dependsOn": [
         "[resourceId('Microsoft.Web/serverfarms/', variables('var_hstpln_name'))]",
         "[resourceId('Microsoft.DocumentDb/databaseAccounts/',variables('var_docdb_name'))]"
@@ -494,7 +494,7 @@
       },
       "resources": [],
       "tags": {
-        "displayName": "Vnet Connection"
+        "displayName": "WebApp Vnet"
       },
       "type": "Microsoft.Web/sites/virtualNetworkConnections"
     },
@@ -513,10 +513,33 @@
       },
       "scale": null,
       "tags": {
-        "displayName": "Certificate"
+        "displayName": "WebApp Certificate"
       },
       "type": "Microsoft.Web/certificates"
-    }
+    },
+    //{
+    //  "apiVersion": "2016-08-01",
+    //  "dependsOn": [
+    //    "[resourceId('Microsoft.Web/certificates', variables('var_cert_name'))]"
+    //  ],
+    //  "location": "[resourceGroup().location]",
+    //  "name": "[variables('var_webapp_name')]",
+    //  "properties": {
+    //    "name": "[variables('var_webapp_name')]",
+    //    "hostNameSslStates": [
+    //      {
+    //        "name": "[parameters('para_vanity_name')]",
+    //        "sslState": "SniEnabled",
+    //        "thumbprint": "[reference(resourceId('Microsoft.Web/certificates', variables('var_cert_name'))).Thumbprint]",
+    //        "toUpdate": true
+    //      }
+    //    ]
+    //  },
+    //  "tags": {
+    //    "displayName": "WebApp hostname"
+    //  },
+    //  "type": "Microsoft.Web/sites"
+    //}
 
     //{
     //  "apiVersion": "2016-08-01",
@@ -555,6 +578,5 @@
     //  },
     //  "type": "Microsoft.Web/certificates"
     //}
-  ],
-  "outputs": {}
+  ]
 }
