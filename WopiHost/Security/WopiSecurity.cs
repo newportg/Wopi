@@ -40,8 +40,9 @@ namespace com.microsoft.dx.officewopi.Security
                 return (principal.HasClaim("container", container) &&
                     principal.HasClaim("docid", docId));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }

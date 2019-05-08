@@ -15,7 +15,7 @@
 
     "para_application_id": { "value": "6cb5883a-a00b-4544-a4ba-9bef16799be4" },
     "para_application_name": { "value": "wopihost" },
-    "para_vanity_name": { "value": "hub.knightfrank.com" },
+    "para_vanity_name": { "value": "Wopihost.hub.knightfrank.com" },
     "para_target_env": { "value": "dev" },
     "para_kvSecretsObject": {
       "value": {
