@@ -31,7 +31,7 @@ namespace com.microsoft.dx.officewopi.Security
                 ValidIssuer = SettingsHelper.Audience,
                 IssuerSigningToken = new X509SecurityToken(getCert())
             };
-
+            
             try
             {
                 // Try to validate the token

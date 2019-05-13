@@ -107,8 +107,9 @@ namespace com.microsoft.dx.officewopi.Utils
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                System.Console.WriteLine(ex.Message);
                 // An unknown exception occurred...return 500
                 response = returnStatus(HttpStatusCode.InternalServerError, "Server Error");
             }

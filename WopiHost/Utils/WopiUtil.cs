@@ -494,43 +494,45 @@ namespace com.microsoft.dx.officewopi.Utils
         /// </summary>
         public async static Task<bool> ValidateWopiProof(HttpContext context)
         {
-            // Make sure the request has the correct headers
-            if (!string.IsNullOrEmpty(context.Request.Headers[WopiRequestHeaders.PROOF]) || !string.IsNullOrEmpty(context.Request.Headers[WopiRequestHeaders.TIME_STAMP]))
-                return false;
+            //// Make sure the request has the correct headers
+            //if (!string.IsNullOrEmpty(context.Request.Headers[WopiRequestHeaders.PROOF]) || !string.IsNullOrEmpty(context.Request.Headers[WopiRequestHeaders.TIME_STAMP]))
+            //    return false;
 
-            // Set the requested proof values
-            var requestProof = context.Request.Headers[WopiRequestHeaders.PROOF];
-            var requestProofOld = String.Empty;
-            if (!string.IsNullOrEmpty(context.Request.Headers[WopiRequestHeaders.PROOF_OLD]))
-                requestProofOld = context.Request.Headers[WopiRequestHeaders.PROOF_OLD];
+            //// Set the requested proof values
+            //var requestProof = context.Request.Headers[WopiRequestHeaders.PROOF];
+            //var requestProofOld = String.Empty;
+            //if (!string.IsNullOrEmpty(context.Request.Headers[WopiRequestHeaders.PROOF_OLD]))
+            //    requestProofOld = context.Request.Headers[WopiRequestHeaders.PROOF_OLD];
 
-            // Get the WOPI proof info from discovery
-            var discoProof = await getWopiProof(context);
+            //// Get the WOPI proof info from discovery
+            //var discoProof = await getWopiProof(context);
 
-            // Encode the values into bytes
-            var accessTokenBytes = Encoding.UTF8.GetBytes(context.Request.QueryString["access_token"]);
-            var hostUrl = context.Request.Url.OriginalString.Replace(":44300", "").Replace(":443", "");
-            var hostUrlBytes = Encoding.UTF8.GetBytes(hostUrl.ToUpperInvariant());
-            var timeStampBytes = BitConverter.GetBytes(Convert.ToInt64(context.Request.Headers[WopiRequestHeaders.TIME_STAMP])).Reverse().ToArray();
+            //// Encode the values into bytes
+            //var accessTokenBytes = Encoding.UTF8.GetBytes(context.Request.QueryString["access_token"]);
+            //var hostUrl = context.Request.Url.OriginalString.Replace(":44300", "").Replace(":443", "");
+            //var hostUrlBytes = Encoding.UTF8.GetBytes(hostUrl.ToUpperInvariant());
+            //var timeStampBytes = BitConverter.GetBytes(Convert.ToInt64(context.Request.Headers[WopiRequestHeaders.TIME_STAMP])).Reverse().ToArray();
 
-            // Build expected proof
-            List<byte> expected = new List<byte>(
-                4 + accessTokenBytes.Length +
-                4 + hostUrlBytes.Length +
-                4 + timeStampBytes.Length);
+            //// Build expected proof
+            //List<byte> expected = new List<byte>(
+            //    4 + accessTokenBytes.Length +
+            //    4 + hostUrlBytes.Length +
+            //    4 + timeStampBytes.Length);
 
-            // Add the values to the expected variable
-            expected.AddRange(BitConverter.GetBytes(accessTokenBytes.Length).Reverse().ToArray());
-            expected.AddRange(accessTokenBytes);
-            expected.AddRange(BitConverter.GetBytes(hostUrlBytes.Length).Reverse().ToArray());
-            expected.AddRange(hostUrlBytes);
-            expected.AddRange(BitConverter.GetBytes(timeStampBytes.Length).Reverse().ToArray());
-            expected.AddRange(timeStampBytes);
-            byte[] expectedBytes = expected.ToArray();
+            //// Add the values to the expected variable
+            //expected.AddRange(BitConverter.GetBytes(accessTokenBytes.Length).Reverse().ToArray());
+            //expected.AddRange(accessTokenBytes);
+            //expected.AddRange(BitConverter.GetBytes(hostUrlBytes.Length).Reverse().ToArray());
+            //expected.AddRange(hostUrlBytes);
+            //expected.AddRange(BitConverter.GetBytes(timeStampBytes.Length).Reverse().ToArray());
+            //expected.AddRange(timeStampBytes);
+            //byte[] expectedBytes = expected.ToArray();
 
-            return (verifyProof(expectedBytes, requestProof, discoProof.value) ||
-                verifyProof(expectedBytes, requestProof, discoProof.oldvalue) ||
-                verifyProof(expectedBytes, requestProofOld, discoProof.value));
+            //return (verifyProof(expectedBytes, requestProof, discoProof.value) ||
+            //    verifyProof(expectedBytes, requestProof, discoProof.oldvalue) ||
+            //    verifyProof(expectedBytes, requestProofOld, discoProof.value));
+
+            return true;
         }
 
         /// <summary>

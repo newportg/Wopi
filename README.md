@@ -137,6 +137,16 @@ Also the name of the file and container it resides is specified here..
 }
 ```
 
+## Hub Security
 
+WOPI knows nothing of the HUB and its particular implementation of security.
+The WOPI demo application renders a link to the document using normal Html anchor tags, which point to the Wopi Host Api, and specify a file , in this case representd by a GUID and a action, to be proformd on the document 
 
+``` html
+/Home/Detail/29bda190-be4f-4f88-bb9c-3fe27f37d9c6?action=view
+```
+
+When this is implemented within the Hub application it would need to represented in much the same way. The Wopi Host would need to be changed to search for the doucment within the HUB attachment tables. The HUB attachment tables would need to return the above json.
+
+The WOPI host would need to supply a HUB method, the user requesting and the file id. The returned Json needs to specify the location of the file, and the access rights that this user has. 
 
