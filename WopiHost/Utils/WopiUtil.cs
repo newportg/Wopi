@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 using Flurl;
 using Flurl.Http;
-
+using System.Net;
 
 namespace com.microsoft.dx.officewopi.Utils
 {
@@ -415,8 +415,10 @@ namespace com.microsoft.dx.officewopi.Utils
             else
             {
                 // Data isn't cached, so we will use the Wopi Discovery endpoint to get the data
+                System.Net.ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
                 HttpClient client = new HttpClient();
-                using (HttpResponseMessage response = await client.GetAsync(System.Environment.GetEnvironmentVariable("WopiDiscovery")))
+                var disco = System.Environment.GetEnvironmentVariable("WopiDiscovery");
+                using (HttpResponseMessage response = await client.GetAsync(disco))
                 {
                     if (response.IsSuccessStatusCode)
                     {
