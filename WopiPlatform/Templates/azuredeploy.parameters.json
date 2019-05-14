@@ -2,7 +2,7 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "para_acronym_region": { "value": "we" },
+    //"para_acronym_region": { "value": "we" },
     //"para_acronym_resgrp": { "value": "rg" },
     //"para_acronym_appsvc": { "value": "appsvc" },
     //"para_acronym_svcpln": { "value": "svcpln" },

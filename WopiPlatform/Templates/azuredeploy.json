@@ -164,7 +164,6 @@
     },
     {
       "apiVersion": "2015-05-01",
-      //"dependsOn": [ "[concat('Microsoft.Storage/storageAccounts/', variables('var_str_name'))]" ],
       "kind": "app",
       "location": "[resourceGroup().location]",
       "name": "[variables('var_appin_name')]",
@@ -439,16 +438,29 @@
           "properties": {
             "CertPfxBase64": "[concat('@Microsoft.KeyVault(SecretUri=', reference('WebCertPfxBase64').secretUriWithVersion, ')')]",
             "CertPfxPassword": "[concat('@Microsoft.KeyVault(SecretUri=', reference('WebCertPfxPassword').secretUriWithVersion, ')')]",
+            "WEBSITE_LOAD_CERTIFICATES": "[concat('@Microsoft.KeyVault(SecretUri=', reference('WebCertThumbprint').secretUriWithVersion, ')')]",
             "ddb:database": "[concat('@Microsoft.KeyVault(SecretUri=', reference('Database').secretUriWithVersion, ')')]",
             "abs:Protocol": "[concat('@Microsoft.KeyVault(SecretUri=', reference('Protocol').secretUriWithVersion, ')')]",
             "WopiDiscovery": "[concat('@Microsoft.KeyVault(SecretUri=', reference('WopiDiscovery').secretUriWithVersion, ')')]",
             "ida:AADInstance": "[concat('@Microsoft.KeyVault(SecretUri=', reference('AADInstance').secretUriWithVersion, ')')]",
             "ida:ClientSecret": "[concat('@Microsoft.KeyVault(SecretUri=', reference('ClientSecret').secretUriWithVersion, ')')]",
-            "WEBSITE_LOAD_CERTIFICATES": "[concat('@Microsoft.KeyVault(SecretUri=', reference('WebCertThumbprint').secretUriWithVersion, ')')]",
             "AuthorizationUri": "[concat('@Microsoft.KeyVault(SecretUri=', reference('AuthorizationUri').secretUriWithVersion, ')')]",
             "AADGraphResourceId": "[concat('@Microsoft.KeyVault(SecretUri=', reference('AADGraphResourceId').secretUriWithVersion, ')')]",
             "MicrosoftGraphResourceId": "[concat('@Microsoft.KeyVault(SecretUri=', reference('MicrosoftGraphResourceId').secretUriWithVersion, ')')]",
             "Audience": "[concat('@Microsoft.KeyVault(SecretUri=', reference('Audience').secretUriWithVersion, ')')]",
+
+            //"CertPfxBase64": "[parameters('para_web_certblob')]",
+            //"CertPfxPassword": "[parameters('para_web_certpass')]",
+            //"WEBSITE_LOAD_CERTIFICATES": "[parameters('para_web_thumbprint')]",
+            //"ddb:database": "WopiDb",
+            //"abs:Protocol": "https",
+            ////"WopiDiscovery": "https://wopi.hub.knightfrank.com/hosting/discovery",
+            //"ida:AADInstance": "https://login.microsoftonline.com/",
+            //"ida:ClientSecret": "(rk%/:C(/&$]=O]%eq.0@l-_9/",
+            //"AuthorizationUri": "https://login.microsoftonline.com",
+            //"AADGraphResourceId": "https://graph.windows.net",
+            //"MicrosoftGraphResourceId": "https://graph.microsoft.com",
+            //"Audience": "https://wopi.hub.knightfrank.com",
 
             "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(concat('microsoft.insights/components/', variables('var_appin_name'))).InstrumentationKey]",
             "ddb:endpoint": "[reference(concat('Microsoft.DocumentDb/databaseAccounts/', variables('var_docdb_name'))).documentEndpoint]",
@@ -457,18 +469,6 @@
             "ida:ClientId": "[parameters('para_application_id')]",
             "abs:AccountName": "[variables('var_str_name')]",
             "abs:AccountKey": "[listKeys( resourceId('Microsoft.Storage/storageAccounts', variables('var_str_name')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
-
-            //"ida:ClientSecret": "(rk%/:C(/&$]=O]%eq.0@l-_9/",
-            //"WopiDiscovery": "https://wopi.hub.knightfrank.com/hosting/discovery",
-            //"ida:AADInstance": "https://login.microsoftonline.com/"
-            //"ddb:database": "WopiDb",
-            //"abs:Protocol": "https"
-            //"WEBSITE_LOAD_CERTIFICATES": "FCA004BF226B569223ACCC3ED10345CE5700DAFF",
-            //"AuthorizationUri": "https://login.microsoftonline.com",
-            //"AADGraphResourceId": "https://graph.windows.net",
-            //"MicrosoftGraphResourceId": "https://graph.microsoft.com",
-            ////"Audience": "https://officewopi.azurewebsites.net",
-            //"Audience": "https://wopi.hub.knightfrank.com"
           },
           "tags": {
             "displayName": "AppSettings"
