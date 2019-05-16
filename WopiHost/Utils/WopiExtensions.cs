@@ -48,7 +48,7 @@ namespace com.microsoft.dx.officewopi.Utils
                         var actions = await WopiUtil.GetDiscoveryInfo();
 
                         // Augments the file with additional properties CloseUrl, HostViewUrl, HostEditUrl
-                        file.CloseUrl = String.Format("https://{0}", context.Request.Url.Authority);
+                        file.CloseUrl = String.Format("http://{0}", context.Request.Url.Authority);
                         var view = actions.FirstOrDefault(i => i.ext == fileExt && i.name == "view");
                         if (view != null)
                             file.HostViewUrl = WopiUtil.GetActionUrl(view, file, context.Request.Url.Authority);
@@ -490,7 +490,7 @@ namespace com.microsoft.dx.officewopi.Utils
                 var tokenStr = security.WriteToken(token);
 
                 // Prepare the Json response
-                string json = String.Format("{ 'Name': '{0}, 'Url': 'https://{1}/wopi/files/{2}?access_token={3}'",
+                string json = String.Format("{ 'Name': '{0}, 'Url': 'http://{1}/wopi/files/{2}?access_token={3}'",
                     newFile.BaseFileName, context.Request.Url.Authority, newFile.id.ToString(), tokenStr);
 
                 // Add the optional properties to response if applicable (HostViewUrl, HostEditUrl)

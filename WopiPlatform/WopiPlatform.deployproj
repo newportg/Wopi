@@ -30,6 +30,9 @@
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <None Include="keyvaultauth.ps1" />
+    <Content Include="Templates\azuredeploy.parameters.prd.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
