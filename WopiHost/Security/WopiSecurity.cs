@@ -52,13 +52,15 @@ namespace com.microsoft.dx.officewopi.Security
         /// </summary>
         public static string GetUserFromToken(string tokenString)
         {
+            var x509SecurityToken = new X509SecurityToken(new X509Certificate2(getCert().GetRawCertData()));
+
             // Initialize the token handler and validation parameters
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenValidation = new TokenValidationParameters()
             {
                 ValidAudience = SettingsHelper.Audience,
                 ValidIssuer = SettingsHelper.Audience,
-                IssuerSigningToken = new X509SecurityToken(getCert())
+                IssuerSigningToken = x509SecurityToken // new X509SecurityToken(getCert())
             };
 
             try
