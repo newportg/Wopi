@@ -150,3 +150,5 @@ When this is implemented within the Hub application it would need to represented
 
 The WOPI host would need to supply a HUB method, the user requesting and the file id. The returned Json needs to specify the location of the file, and the access rights that this user has. 
 
+![Wopi Flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiFlow.puml)
+![Wopi Flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiFlowSq.puml)

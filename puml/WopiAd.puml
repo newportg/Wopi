@@ -1,0 +1,39 @@
+@startuml WOPI
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Networking/AzureVPNGateway.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+!includeurl AzurePuml/Compute/AzureVirtualMachine.puml
+
+
+frame "Azure Northern Europe" as azRgNe {
+
+    AzureActiveDirectory( azAdaT, "Knight Frank LLP", "azureteamknightfrank.onmicrosoft.com")
+    AzureActiveDirectory( azAdKf, "Knight Frank (O365)", "knightfrank.onmicrosoft.com")
+
+    frame "RG GN-WopiHost " as azRgWhNe {
+        Container( wopi, "wopi App Service", "")
+    }
+}
+
+frame "Knight Frank" as azKf {
+        AzureActiveDirectory( azAdOp, "On-Premise", "")
+        Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
+
+}
+
+azAdOp -[bold]-> azAdKf : AdConnect
+wopi -[bold,#green]-> azAdaT
+wopi <-[bold,#red]- oos : Move into Wopi RG
+oos --> azAdOp
+
+
+@enduml

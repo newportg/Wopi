@@ -1,0 +1,52 @@
+@startuml WOPI
+
+actor user
+participant "hub\n Selection" as hubSl
+participant "Office\n Iframe" as hubIf
+participant "WOPI Api\nClient" as azWhNe
+participant "Office\nOnline Server" as oos
+participant "WOPI Api\nServer" as azWaNe
+participant "File\nStorage" as azBsNe
+
+autonumber
+user -> hubSl 
+activate user
+
+    hubSl -> azWhNe : Request File
+    azWhNe -> oos : Request File\nCreate AccessToken
+
+    alt successful case
+        oos -> azWaNe : Get FileInfo\npass AccessToken
+        activate azWaNe
+            azWaNe -> azWaNe : Validate\nAccessToken
+            azWaNe -> hubdb : Get FileInfo( user, fileId)
+            activate hubdb
+            return Response FileInfo
+        return Response
+        oos -> azWaNe : Get File
+        activate azWaNe
+            azWaNe -> azBsNe : Get File
+            activate azBsNe
+            return Response File
+        return Response 
+    else Invalid AccessToken
+        oos -> azWaNe : Get FileInfo\npass AccessToken
+        activate azWaNe
+            azWaNe -> azWaNe : Validate\nAccessToken
+        return Error Response
+    else Unauthorised
+        oos -> azWaNe : Get FileInfo\npass AccessToken
+        activate azWaNe
+            azWaNe -> azWaNe : Validate\nAccessToken
+            azWaNe -> hubdb : Get FileInfo( user, fileId)
+            activate hubdb
+            return Response Unauthorised
+        return Error Response
+    end
+    oos --> hubIf : Response
+
+hubIf --> user 
+deactivate user
+
+
+@enduml
