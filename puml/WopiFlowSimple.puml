@@ -18,8 +18,8 @@ frame "Hub" as hub {
     Person( ifame, "Hub Application", "IFrame")
 }
 
-AzureWebApp( azWhNe, "WOPI ClientApi", "Provides Office Online access to the blob store")
-AzureWebApp( azWaNe, "WOPI Host", "devWopiHost.hub.knightfrank.com")
+AzureWebApp( azWhNe, "WOPI Client", "Provides Office Online access to the blob store")
+AzureWebApp( azWaNe, "WOPI Server", "devWopiHost.hub.knightfrank.com")
 Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
 AzureBlobStorage( azBsNe, "File Storage RA-GRS", "kfhubenvneust01")
 Container(hubdb, "Hub app", "")
