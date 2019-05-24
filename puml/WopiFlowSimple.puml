@@ -1,0 +1,39 @@
+@startuml WOPI
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Networking/AzureVPNGateway.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+!includeurl AzurePuml/Compute/AzureVirtualMachine.puml
+
+frame "Hub" as hub {
+    Person( select, "Hub Application", "File Selection")
+    Person( ifame, "Hub Application", "IFrame")
+}
+
+AzureWebApp( azWhNe, "WOPI ClientApi", "Provides Office Online access to the blob store")
+AzureWebApp( azWaNe, "WOPI Host", "devWopiHost.hub.knightfrank.com")
+Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
+AzureBlobStorage( azBsNe, "File Storage RA-GRS", "kfhubenvneust01")
+Container(hubdb, "Hub app", "")
+AzureActiveDirectory( azAd, "Authentication", "")
+
+select -down-> azWhNe : request a file
+azWhNe -up-> ifame : Render result
+azWhNe --> oos
+azWhNe -> azAd
+oos --> azWhNe
+oos --> azWaNe
+azWaNe --> oos
+azWaNe --> azBsNe : File store
+azWaNe --> hubdb : Verify access to document, and supply file info
+
+
+@enduml
