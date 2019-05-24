@@ -487,7 +487,7 @@ namespace com.microsoft.dx.officewopi.Utils
             }
 
             // Add the WOPISrc to the end of the request
-            urlsrc += ((phCnt > 0) ? "" : "?") + String.Format("WOPISrc=http://{0}/wopi/files/{1}", authority, file.id.ToString());
+            urlsrc += ((phCnt > 0) ? "" : "?") + String.Format("WOPISrc=https://{0}/wopi/files/{1}", authority, file.id.ToString());
             return urlsrc;
         }
 
