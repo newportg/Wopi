@@ -1,0 +1,44 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+!define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/AzureCosmosDb.puml
+!includeurl AzurePuml/Identity/AzureActiveDirectory.puml
+!includeurl AzurePuml/Storage/AzureBlobStorage.puml
+!includeurl AzurePuml/Web/AzureWebApp.puml
+!includeurl AzurePuml/Security/AzureKeyVault.puml
+!includeurl AzurePuml/DevOps/AzureApplicationInsights.puml
+!includeurl AzurePuml/Networking/AzureTrafficManager.puml
+!includeurl AzurePuml/Networking/AzureVPNGateway.puml
+!includeurl AzurePuml/Networking/AzureVirtualNetwork.puml
+!includeurl AzurePuml/Compute/AzureVirtualMachine.puml
+
+title Wopi Physical 
+
+frame "Hub Application" as hub {
+    Container(hubSl, "File Selection", "")
+    Container(hubIf, "Office IFrame ", "")
+    AzureBlobStorage( azBsNe, "File Storage", "kfhubprodneust01")
+    database hubdb
+
+    hubSl -[hidden] hubdb
+    hubdb -[hidden] azBsNe
+    azBsNe -[hidden] hubIf    
+}
+
+frame "Wopi RG" as wopi {
+    AzureWebApp( azWhNe, "WOPI Api", "wopihost-webapp-dev-ne")
+}
+frame "Knight Frank" as azKf {
+    Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
+}
+
+hubSl -down-> azWhNe
+azWhNe --> oos
+hubdb <-down-> azWhNe
+azBsNe <-down-> azWhNe
+oos -> azWhNe
+azWhNe --> hubIf
+
+
+@enduml

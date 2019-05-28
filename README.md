@@ -153,3 +153,49 @@ The WOPI host would need to supply a HUB method, the user requesting and the fil
 ![Wopi Flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiFlowSimple.puml)
 ![Wopi Flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiFlow.puml)
 ![Wopi Flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiFlowSq.puml)
+
+## Stories
+
+* https://knightfrank.visualstudio.com/Database%20Development/_workitems/edit/104008
+* https://knightfrank.visualstudio.com/Database%20Development/_workitems/edit/133994
+
+* Ability to edit word document generated from template without a need to manually upload new version
+  * While the user is editing the document it is checked out to them for editing
+  * The attchament table should be updated with the User and time (LockUser, LockTime)
+*  Another user is prevented from editing a document that is currently being being edited, and they are shown the following message: "[username] is currently editing this document" - either this, or some kind of indicator in the attachments area showing that the document is being updated by the user.
+  * A request to edit a document should check the attachment table first. If a LockUser/LockTime exists then refuse the user.
+* If x amount of time has passed then the check out expires for the user
+  * A document can be check out for 12 hours.
+* If the user closes word then they lose their check out
+  * This will depend on how the user closes there session.
+    * If the user closes the browser, then 
+      * either
+        * The state will be remain checked out to the editing user, until the LockTime elapses.
+        * Capture the window.onbeforeunload event and clear the attachment LockUser and Time.
+    * If the user closes word or saves a document then the application should handle the close and act acordingly, and clear the attachment table LockUser/LockTime
+
+Currently when word document is generated from template, you need to save a copy on the disk and manually upload new version. New version should be uploaded automatically on save.
+
+Questions:
+* Ability to open the word document in the word desktop client
+  * WOPI will allow editing of documents within a browser, but not allow for the document to be loaded into a desktop version of office applications
+* Ability to save the changes directly from word, which are then uploaded to the Blob storage - and we accept that the user could click save as instead and save it locally
+  * WOPI interacts with blob storage to read and write documents, and no where else.
+* There should be no time out
+  * WOPI checkout times are currently set to 12 hours.
+* What happens if another user tries to access the document at the same time that it is being updated
+  * Another user should be able to view the document at any time, and they will get the current version that is save to blob store.
+* What happens if another user tried to edit the same document at the same time?  Do they get some kind of message or is there some kind of lock icon preventing them from editing it
+  * The current active  Lock User and Lock Time should be saved to the attachment table, any subsequent user will only be able to view until the lock is relinquished.
+* If it's a lock, how will the lock get relinquished?
+  * The lock is relinquished if 
+    * The user saves a document, thus clearing the attachment table 
+    * A request to edit a document encounters a Lock Time in the attachment table that is older than 12 hours.
+
+![Wopi Physical](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiPhysical.puml)
+
+![Wopi Context](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiContext.puml)
+
+![Wopi Container](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiContainer.puml)
+
+![Wopi Component](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiComponent.puml)

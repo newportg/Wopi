@@ -1,0 +1,18 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Context.puml
+
+title Wopi System Context diagram 
+
+Enterprise_Boundary(c0, "Knight Frank LLP") {
+Person( hubuser, "Hub User", "A User of the Hub Application")
+
+System( hubapp, "Hub Application", "")
+System( wopapp, "Wopi Application", "Document management")
+System_Ext(oos, "Office Online Server", "internal Microsoft Office Server")
+}
+
+Rel(hubuser, hubapp, "Uses")
+Rel(hubapp, wopapp, "Uses")
+Rel(wopapp, oos, "Uses")
+
+@enduml
