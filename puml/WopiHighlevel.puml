@@ -1,0 +1,22 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+title Wopi 
+
+System_Boundary(bro, "Browser") {
+    Container_Boundary(wopfram, "Office Online IFrame") {
+        Component(word, "", "Office Component", "")
+    }
+}
+    
+Container(wopi, "WOPI Host", "File Store", "")
+Container(oos, "Office Online Server", "VM", "")
+
+wopi -[hidden]- word
+wopi -[hidden]- oos
+
+oos -up-> wopi : WOPI 
+wopfram -> wopi
+oos <-up- word
+
+@enduml
