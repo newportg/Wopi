@@ -1,0 +1,25 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+LAYOUT_TOP_DOWN
+
+title Wopi Host System Container diagram 
+
+System_Ext(spa, "Single-Page App", "JavaScript, Angular")
+System_Ext(backend_api, "Hub API", "C# api")
+
+System_Boundary(c1, "WOPI Host Application") {
+    Container( hubctl, "Hub API Controller", "C# api", "")
+    Container( oosctl, "OOS API Controller", "C# api", "")
+}
+System_Ext( oos, "Office Online Server")
+
+Rel(spa, backend_api, "List Attachments", "async, JSON/HTTPS")
+Rel(spa, oos, "Load Iframe", "async, JSON/HTTPS")
+Rel(spa, hubctl, "Request a file", "sync/async, JSON/HTTPS")
+Rel(hubctl, backend_api, "Reads/Writes files", "async, JSON/HTTPS")
+Rel(oos, oosctl, "Get/Put File Contents", "async, JSON/HTTPS")
+Rel(hubctl, oos, "Reads/Writes files", "async, JSON/HTTPS")
+Rel(oosctl, backend_api, "Reads/Writes files", "async, JSON/HTTPS")
+
+@enduml

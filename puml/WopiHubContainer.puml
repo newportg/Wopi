@@ -15,12 +15,14 @@ System_Boundary(c1, "Hub Application") {
 }
 
 System_Ext( wopapp, "Wopi Host\nApplication")
+System_Ext( oos, "Office Online Server")
 
 Rel(hubuser, spa, "Uses", "HTTPS")
 Rel(spa, backend_api, "Uses", "async, JSON/HTTPS")
+Rel(spa, oos, "Uses", "async, JSON/HTTPS")
 Rel(backend_api, filestore, "Uses", "async, JSON/HTTPS")
 Rel(backend_api, database, "Reads from and writes to", "sync, ODBC")
 Rel_Neighbor(spa, wopapp, "Uses", "sync/async, JSON/HTTPS")
 Rel_R(wopapp, backend_api, "Reads/Writes files", "async, JSON/HTTPS")
-
+Rel(oos, wopapp, "Uses", "async, JSON/HTTPS")
 @enduml

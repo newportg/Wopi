@@ -13,12 +13,16 @@ Container_Boundary(backend_api, "Hub API App") {
 }
     
 System_Ext(wopapi, "WOPI Host Api", "Allows the HUB to request files")
+System_Ext(oos, "Office Online Server", "")
+
 
 Rel(spa, hubController, "Gets available attachments", "async, JSON/HTTPS")
 Rel(apiController, filestore, "Gets and Updates files")
 Rel(apiController, database, "Gets/Sets File Information from Attachment table", "sync, ODBC")
 Rel(hubController, database, "Gets attachments from Attachment table", "sync, ODBC")
 Rel(spa, wopapi, "Uses", "sync/async, JSON/HTTPS")
+Rel(spa, oos, "Uses", "sync/async, JSON/HTTPS")
 Rel(wopapi, apiController, "Uses", "sync/async, JSON/HTTPS")
+Rel(oos, wopapi, "Uses", "sync/async, JSON/HTTPS")
 
 @enduml
