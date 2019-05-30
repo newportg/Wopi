@@ -1,0 +1,24 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+title Wopi Hub System Component diagram 
+
+Container(spa, "Single-Page App", "JavaScript, Angular", "Provides a list of available files\nIframe for viewing docuemnts")
+
+Container_Boundary(backend_api, "Hub API App") {
+    ContainerDb(database, "Database", "SQL Database", "Stores attachment table, audit logs, etc.")
+    Container(hubController, "Hub Client Controller", "C# api", "")
+    Container(apiController, "API Controller", "C# api", "")
+    Container(filestore, "File Store", "Azure BlobStore", "Provides storage for generated documents")
+}
+    
+System_Ext(wopapi, "WOPI Host Api", "Allows the HUB to request files")
+
+Rel(spa, hubController, "Gets available attachments", "async, JSON/HTTPS")
+Rel(apiController, filestore, "Gets and Updates files")
+Rel(apiController, database, "Gets/Sets File Information from Attachment table", "sync, ODBC")
+Rel(hubController, database, "Gets attachments from Attachment table", "sync, ODBC")
+Rel(spa, wopapi, "Uses", "sync/async, JSON/HTTPS")
+Rel(wopapi, apiController, "Uses", "sync/async, JSON/HTTPS")
+
+@enduml
