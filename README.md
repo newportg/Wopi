@@ -154,6 +154,7 @@ The WOPI host would need to supply a HUB method, the user requesting and the fil
 ![Wopi Flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiFlow.puml)
 ![Wopi Flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiFlowSq.puml)
 
+![Wopi High](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiHighlevel.puml)
 ## Stories
 
 * https://knightfrank.visualstudio.com/Database%20Development/_workitems/edit/104008

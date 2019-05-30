@@ -14,7 +14,8 @@
     //"para_acronym_docdb": { "value": "docdb" },
     //"para_target_env": { "value": "dev" },
 
-    "para_application_id": { "value": "6cb5883a-a00b-4544-a4ba-9bef16799be4" },
+    //"para_application_id": { "value": "6cb5883a-a00b-4544-a4ba-9bef16799be4" },
+    "para_application_id": { "value": "9060c24b-9393-422b-8c28-ae48cd31050e" },
     "para_application_name": { "value": "wopihost" },
     "para_vanity_name": { "value": "devWopihost.hub.knightfrank.com" },
     "para_kvSecretsObject": {

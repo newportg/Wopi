@@ -16,14 +16,15 @@
 title Wopi Physical 
 
 frame "Hub Application" as hub {
-    Container(hubSl, "File Selection", "")
     Container(hubIf, "Office IFrame ", "")
     AzureBlobStorage( azBsNe, "File Storage", "kfhubprodneust01")
+    Container(hubApi, "Hub Api", "")
     database hubdb
+    Container(hubSl, "File Selection", "")
 
-    hubSl -[hidden] hubdb
-    hubdb -[hidden] azBsNe
-    azBsNe -[hidden] hubIf    
+    hubIf -[hidden] hubSl
+    hubdb -down-> hubApi
+    azBsNe -down-> hubApi
 }
 
 frame "Wopi RG" as wopi {
@@ -34,11 +35,10 @@ frame "Knight Frank" as azKf {
 }
 
 hubSl -down-> azWhNe
-azWhNe --> oos
-hubdb <-down-> azWhNe
-azBsNe <-down-> azWhNe
-oos -> azWhNe
-azWhNe --> hubIf
+hubApi <-down-> azWhNe
+hubIf -> azWhNe
 
+azWhNe -down-> oos
+oos -down-> azWhNe 
 
 @enduml

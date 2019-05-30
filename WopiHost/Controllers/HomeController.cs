@@ -43,9 +43,13 @@ namespace com.microsoft.dx.officewopi.Controllers
             if (String.IsNullOrEmpty(Request["action"]))
                 return RedirectToAction("Error", "Home", new { error = "No action provided" });
 
+            //var user = User.Identity.Name.ToLower();
+            var user = "gary.newport@knightfrank.com";
+
+
             // Get the specific file from DocumentDB
             var file = DocumentDBRepository<FileModel>.GetItem("Files",
-                i => i.OwnerId == User.Identity.Name.ToLower() && i.id == id);
+                i => i.OwnerId == user && i.id == id);
 
             // Check for null file
             if (file == null)
@@ -63,7 +67,7 @@ namespace com.microsoft.dx.officewopi.Controllers
 
                 // Generate JWT token for the user/document
                 WopiSecurity wopiSecurity = new WopiSecurity();
-                var token = wopiSecurity.GenerateToken(User.Identity.Name.ToLower(), getUserContainer(), id.ToString());
+                var token = wopiSecurity.GenerateToken(user, getUserContainer(), id.ToString());
                 ViewData["access_token"] = wopiSecurity.WriteToken(token);
                 ViewData["access_token_ttl"] = token.ValidTo.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds;
                 ViewData["wopi_urlsrc"] = urlsrc;
@@ -83,13 +87,16 @@ namespace com.microsoft.dx.officewopi.Controllers
         [Authorize]
         public async Task<ActionResult> Add()
         {
+            //var user = User.Identity.Name.ToLower();
+            var user = "gary.newport@knightfrank.com";
+
             try
             {
                 // Create the file entity
                 DetailedFileModel file = new DetailedFileModel()
                 {
                     id = Guid.NewGuid(),
-                    OwnerId = User.Identity.Name.ToLower(),
+                    OwnerId = user,
                     BaseFileName = HttpUtility.UrlDecode(Request["HTTP_X_FILE_NAME"]),
                     Size = Convert.ToInt32(Request["HTTP_X_FILE_SIZE"]),
                     Container = getUserContainer(),
@@ -161,7 +168,10 @@ namespace com.microsoft.dx.officewopi.Controllers
         /// </summary>
         private string getUserContainer()
         {
-            return User.Identity.Name.Replace("@", "-").Replace(".", "-");
+            //var user = User.Identity.Name;
+            var user = "gary.newport@knightfrank.com";
+
+            return user.Replace("@", "-").Replace(".", "-");
         }
     }
 }
