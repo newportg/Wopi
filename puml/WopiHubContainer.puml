@@ -1,0 +1,26 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+LAYOUT_TOP_DOWN
+
+title Wopi Hub System Container diagram 
+
+Person( hubuser, "Hub User", "A User of the Hub Application")
+
+System_Boundary(c1, "Hub Application") {
+    Container(spa, "Single-Page App", "JavaScript, Angular", "Provides all the HUB functionality to users via their web browser")
+    ContainerDb(database, "Database", "SQL Database", "Stores attachment table, audit logs, etc.")
+    Container(backend_api, "API Application", "C# api", "Provides authorisation, file creation, and logging functions ")
+    Container(filestore, "File Store", "Azure BlobStore", "Provides storage for generated documents")
+}
+
+System_Ext( wopapp, "Wopi Host\nApplication")
+
+Rel(hubuser, spa, "Uses", "HTTPS")
+Rel(spa, backend_api, "Uses", "async, JSON/HTTPS")
+Rel(backend_api, filestore, "Uses", "async, JSON/HTTPS")
+Rel(backend_api, database, "Reads from and writes to", "sync, ODBC")
+Rel_Neighbor(spa, wopapp, "Uses", "sync/async, JSON/HTTPS")
+Rel_R(wopapp, backend_api, "Reads/Writes files", "async, JSON/HTTPS")
+
+@enduml
