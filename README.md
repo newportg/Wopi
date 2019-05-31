@@ -200,3 +200,5 @@ Questions:
 ![Wopi Container](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiContainer.puml)
 
 ![Wopi Component](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiComponent.puml)
+
+![Wopi Simple](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/Kf-GaryNewport/Wopi/master/puml/WopiDR.puml)
