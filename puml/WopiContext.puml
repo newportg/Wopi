@@ -2,12 +2,14 @@
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
 !define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
 
-Container(spa, "Hub SPA Client", "")
-Container(hub, "Hub Api Server", "hub.knightfrank.com")
+Title Wopi Context Diagram
+
+Container(spa, "Hub SPA Client", "AngularJs")
+Container(hub, "Hub Server Api", "hub.knightfrank.com")
 System_Ext(oos, "Office Online Server")
 frame "Wopi Host" as wopihost {
-    Container(whClientApi, "Hub Client Api", "<env>wopihost.hub.knightfrank.com")
-    Container(whOOSApi, "Office Online Api", "<env>wopihost.hub.knightfrank.com")
+    Container(whClientApi, "Wopi Client Api", "<env>wopihost.hub.knightfrank.com")
+    Container(whOOSApi, "Wopi Office Online Api", "<env>wopihost.hub.knightfrank.com")
 
     whClientApi --> hub : Get FileInfo
     whClientApi -> oos : Get Discovery
