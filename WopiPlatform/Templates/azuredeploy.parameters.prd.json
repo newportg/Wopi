@@ -13,7 +13,9 @@
     //"para_acronym_webapp": { "value": "webapp" },
     //"para_acronym_docdb": { "value": "docdb" },
 
-    "para_application_id": { "value": "cb5c11b4-cb19-44a9-965b-9bf3364450c7" },
+    //"para_application_id": { "value": "cb5c11b4-cb19-44a9-965b-9bf3364450c7" },
+    "para_application_id": { "value": "2b190944-dfea-4668-b62f-8237dc92c7c9" },
+
     "para_application_name": { "value": "wopihost" },
     "para_vanity_name": { "value": "Wopihost.hub.knightfrank.com" },
     "para_target_env": { "value": "prd" },

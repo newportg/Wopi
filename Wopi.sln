@@ -16,12 +16,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "puml", "puml", "{3D771026-5
 	ProjectSection(SolutionItems) = preProject
 		puml\cosmosdb.PNG = puml\cosmosdb.PNG
 		puml\filestore.PNG = puml\filestore.PNG
+		puml\WopiAd.puml = puml\WopiAd.puml
+		puml\WopiApis.puml = puml\WopiApis.puml
 		puml\WopiBalanced.puml = puml\WopiBalanced.puml
 		puml\WopiBalanced2.puml = puml\WopiBalanced2.puml
+		puml\WopiComponent.puml = puml\WopiComponent.puml
+		puml\WopiContainer.puml = puml\WopiContainer.puml
+		puml\WopiContext.puml = puml\WopiContext.puml
 		puml\WopiCurrentState.puml = puml\WopiCurrentState.puml
 		puml\WopiDemoSequence.puml = puml\WopiDemoSequence.puml
+		puml\WopiDR.puml = puml\WopiDR.puml
+		puml\WopiFlow.puml = puml\WopiFlow.puml
+		puml\WopiFlowSimple.puml = puml\WopiFlowSimple.puml
+		puml\WopiFlowSq.puml = puml\WopiFlowSq.puml
+		puml\WopiHighlevel.puml = puml\WopiHighlevel.puml
+		puml\WopiHostContainer.puml = puml\WopiHostContainer.puml
+		puml\WopiHubComponent.puml = puml\WopiHubComponent.puml
+		puml\WopiHubContainer.puml = puml\WopiHubContainer.puml
 		puml\WopiHubStorageRAGRS.puml = puml\WopiHubStorageRAGRS.puml
+		puml\WopiPhysical.puml = puml\WopiPhysical.puml
+		puml\WopiProposed.puml = puml\WopiProposed.puml
 		puml\WopiSimple.puml = puml\WopiSimple.puml
+		WopiSingleNe.puml = WopiSingleNe.puml
 	EndProjectSection
 EndProject
 Global
