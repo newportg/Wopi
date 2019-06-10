@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "puml", "puml", "{3D771026-5
 		puml\WopiPhysical.puml = puml\WopiPhysical.puml
 		puml\WopiProposed.puml = puml\WopiProposed.puml
 		puml\WopiSimple.puml = puml\WopiSimple.puml
-		WopiSingleNe.puml = WopiSingleNe.puml
+		puml\WopiSingleNe.puml = puml\WopiSingleNe.puml
 	EndProjectSection
 EndProject
 Global
