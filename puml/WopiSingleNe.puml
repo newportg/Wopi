@@ -17,10 +17,7 @@ frame "Knight Frank" as azKf {
     Container(oos, "Office Online Server", "*.wopihost.hub.knightfrank.com")
 }
 
-AzureActiveDirectory( azAd, "App Registration", "azureteamknightfrank.onmicrosoft.com")
-AzureApplicationInsights( azAiNe, "Logs/Analysis", "wopihost-appins-dev-ne")
-
-azAd -[hidden]- azAiNe
+System_Ext( azAd, "App Registration", "azureteamknightfrank.onmicrosoft.com")
 
 frame "Azure Northern Europe" as azRgNe {
 
@@ -28,6 +25,7 @@ frame "Azure Northern Europe" as azRgNe {
         'Components
         AzureWebApp( azWaNe, "Wopi Api", "wopihost-webapp-ENV-ne")
         AzureKeyVault( azKvNe, "KeyVault", "wopihost-kv-dev-ne")
+        AzureApplicationInsights( azAiNe, "Logs/Analysis", "wopihost-appins-dev-ne")
     
         'Ordering
         azKvNe -[hidden] azWaNe
@@ -35,19 +33,13 @@ frame "Azure Northern Europe" as azRgNe {
         
     frame "RG Hub-ENV-NEU-RG" as azRgAlNe {
         'Components
-        AzureBlobStorage( azBsNe, "File Storage", "RA-GRS")
-        AzureWebApp( azWaHuNe, "Hub Server Api", "To be determined")
-        AzureVPNGateway( azVpnNe, "VPN Gateway", "Hub-Env-NEU-Common-VN-VNG")
-        
+        Container(azWaHuNe, "Hub Server Api", "*.hub.knightfrank.com")
+        System_Ext(azVpnNe, "VPN Gateway", "Hub-Env-NEU-Common-VN-VNG")
+
         'Ordering
-        azBsNe -[hidden]- azWaHuNe
-        azBsNe -[hidden]- azVpnNe
         'azVpnNe -[hidden] azWaHuNe
         azWaHuNe -[hidden] azVpnNe
-        azBsNe -[hidden]- azWaHuNe
     }
-    
-    azWaHuNe -up-> azBsNe
 }
 
 azWaNe -up-> azVpnNe 
@@ -55,7 +47,7 @@ azVpnNe -up-> oos
 
 azKvNe -down-> azAd : Get
 azWaNe -down-> azAd : Get
-azWaNe -down-> azAiNe : Put
+azWaNe -> azAiNe : Put
 azWaNe -left-> azKvNe : Get
 
 azWaHuNe -down-> azWaNe
